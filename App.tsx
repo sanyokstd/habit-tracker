@@ -1,22 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import {
-  Button,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import { userStore } from './src/store/store';
+import { Button, SafeAreaView, StatusBar, Text, useColorScheme, View } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { userStore } from 'store/userStore';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,7 +9,7 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-  const {user,setUser} = userStore();
+  const { user, setUser } = userStore();
 
   return (
     <SafeAreaView style={backgroundStyle}>
