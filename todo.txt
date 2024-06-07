@@ -1,3 +1,3 @@
-[] - create store
-[] - add ui library
+[v] - create store
+[v] - add ui library
 [] - add first load screen

@@ -1,9 +1,7 @@
-// @ts-check
 module.exports = {
   arrowParens: 'avoid',
-  bracketSameLine: false,
-  bracketSpacing: true,
+  bracketSameLine: true,
+  bracketSpacing: false,
   singleQuote: true,
   trailingComma: 'all',
-  printWidth: 120,
 };
