@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 
-import {Text as DefaultText} from 'react-native-paper';
+import {FirstScreen} from 'screens';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
-      <DefaultText variant="bodyLarge">Press me</DefaultText>
+    <SafeAreaView style={{flex: 1}}>
+      <FirstScreen />
     </SafeAreaView>
   );
 }
