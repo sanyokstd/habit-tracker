@@ -4,10 +4,7 @@ import {View} from 'react-native';
 import {Button, HelperText, Text, TextInput} from 'react-native-paper';
 import {Controller, Control, FieldErrors} from 'react-hook-form';
 import {styles as s} from 'features/Auth/styles';
-
-interface FormValues {
-  name: string;
-}
+import {FormValues} from './inteface';
 
 interface NameFormProps {
   control: Control<FormValues>;
@@ -35,6 +32,7 @@ const SetNameView: React.FC<NameFormProps> = ({
               <TextInput
                 mode="outlined"
                 value={value}
+                placeholder="Enter your name"
                 onBlur={onBlur}
                 onChangeText={onChange}
                 error={!!errors.name}

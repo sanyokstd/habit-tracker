@@ -5,10 +5,8 @@ import * as Yup from 'yup';
 import {StepProps} from 'features/Auth/interface';
 import {userStore} from 'store/userStore';
 import {SetNameView} from './SetNameView';
+import {FormValues} from './inteface';
 
-interface FormValues {
-  name: string;
-}
 const schema = Yup.object().shape({
   name: Yup.string()
     .required('Name is required')
