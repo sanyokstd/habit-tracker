@@ -1,7 +1,0 @@
-[v] - create store
-[v] - ui library
-[v] - first load screen
-[] - first habit feature
-[] - create navigator
-[] - create layout
-[] - create mock screens
