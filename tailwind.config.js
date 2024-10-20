@@ -10,6 +10,12 @@ module.exports = {
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
       },
+      transitionProperty: {
+        background: 'background-color',
+      },
+      transitionDuration: {
+        300: '300ms',
+      },
     },
   },
   plugins: [],
