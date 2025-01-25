@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Stats() {
+export default function Blog() {
   return (
     <View style={styles.screen}>
-      <Text style={styles.text}>Статистика</Text>
+      <Text style={styles.text}>Блог</Text>
     </View>
   );
 }

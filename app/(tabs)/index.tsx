@@ -1,45 +1,62 @@
-import { TabItem, MainLayout } from '@/components';
-import { useRef, useState } from 'react';
-import { Text, View } from 'react-native';
-import Swiper from 'react-native-swiper';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { Avatar, IconButton } from 'react-native-paper';
+import { Button } from 'react-native-paper';
+
+const data = [
+  { name: 'У мене немає звичків', icon: 'folder', onPress: () => {} },
+  { name: 'Звички', icon: 'folder', onPress: () => {} },
+  { name: 'Статистика', icon: 'bar-chart', onPress: () => {} },
+  { name: 'Блог', icon: 'book', onPress: () => {} },
+  { name: 'У мене немає звичків', icon: 'folder', onPress: () => {} },
+  { name: 'Звички', icon: 'folder', onPress: () => {} },
+  { name: 'Статистика', icon: 'bar-chart', onPress: () => {} },
+  { name: 'Блог', icon: 'book', onPress: () => {} },
+  { name: 'У мене немає звичків', icon: 'folder', onPress: () => {} },
+  { name: 'Звички', icon: 'folder', onPress: () => {} },
+  { name: 'Статистика', icon: 'bar-chart', onPress: () => {} },
+  { name: 'Блог', icon: 'book', onPress: () => {} },
+  { name: 'У мене немає звичків', icon: 'folder', onPress: () => {} },
+  { name: 'Звички', icon: 'folder', onPress: () => {} },
+  { name: 'Статистика', icon: 'bar-chart', onPress: () => {} },
+  { name: 'Блог', icon: 'book', onPress: () => {} },
+  { name: 'У мене немає звичків', icon: 'folder', onPress: () => {} },
+  { name: 'Звички', icon: 'folder', onPress: () => {} },
+  { name: 'Статистика', icon: 'bar-chart', onPress: () => {} },
+  { name: 'Блог', icon: 'book', onPress: () => {} },
+];
+
+const Item = ({ item }: { item: any }) => {
+  return (
+    <View style={styles.item}>
+      <Avatar.Icon size={24} icon={item.icon} />
+      <Text style={styles.text}>{item.name}</Text>
+      <IconButton icon="plus" size={24} onPress={item.onPress} />
+    </View>
+  );
+};
 
 export default function HomeScreen() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef<Swiper>(null);
-
-  const handleTabPress = (index: number) => {
-    setActiveIndex(index);
-    swiperRef.current?.scrollTo(index);
-  };
-
   return (
-    <MainLayout title="Habits">
-      <View className="flex-row p-4" style={{ gap: 10 }}>
-        <TabItem
-          text="Today"
-          onPress={() => handleTabPress(0)}
-          active={activeIndex === 0}
-        />
-        <TabItem
-          text="Weakly"
-          onPress={() => handleTabPress(1)}
-          active={activeIndex === 1}
-        />
-      </View>
-      <View className="flex-1">
-        <Swiper
-          ref={swiperRef}
-          loop={false}
-          onIndexChanged={(index) => setActiveIndex(index)}
-        >
-          <View className="flex-1">
-            <Text>habit 1</Text>
-          </View>
-          <View className="flex-1">
-            <Text>habit 2</Text>
-          </View>
-        </Swiper>
-      </View>
-    </MainLayout>
+    <View style={styles.screen}>
+      <FlatList data={data} renderItem={({ item }) => <Item item={item} />} />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    letterSpacing: 0.2,
+    fontFamily: 'RobotoRegular',
+  },
+  item: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+  },
+});
