@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { Avatar, IconButton } from 'react-native-paper';
-import { Button } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
 
 const data = [
   { name: 'У мене немає звичків', icon: 'folder', onPress: () => {} },
@@ -36,6 +36,8 @@ const Item = ({ item }: { item: any }) => {
 };
 
 export default function HomeScreen() {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screen}>
       <FlatList data={data} renderItem={({ item }) => <Item item={item} />} />

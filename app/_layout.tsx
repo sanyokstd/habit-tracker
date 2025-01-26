@@ -12,6 +12,7 @@ import 'react-native-reanimated';
 import { IconButton, Provider as PaperProvider } from 'react-native-paper';
 import { getActiveTheme } from '@/theme/theme';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import '@/i18n';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();

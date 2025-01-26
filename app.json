@@ -43,7 +43,8 @@
             "./assets/fonts/Roboto-Light.ttf"
           ]
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true
