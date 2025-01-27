@@ -1,34 +1,12 @@
 import { IHabit } from '@/types/habits';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { HabitCheckbox } from '@/components';
+import { HabitCheckbox, HabitDaysCalendar } from '@/components';
 import { useState } from 'react';
 
 export const ListItem = ({ item }: { item: IHabit }) => {
   const [checked, setChecked] = useState(false);
   const handleCheckboxPress = () => {
     setChecked(!checked);
-  };
-
-  const renderCalendar = () => {
-    const weekCount = 50;
-    const daysInWeek = 7;
-    const renderWeek = () => {
-      return (
-        <View style={s.calendarColumn}>
-          {Array.from({ length: daysInWeek }).map((_, i) => (
-            <View
-              style={[s.calendarDay, { backgroundColor: item.colorLight }]}
-            ></View>
-          ))}
-        </View>
-      );
-    };
-
-    return (
-      <ScrollView horizontal pagingEnabled contentContainerStyle={s.calendar}>
-        {Array.from({ length: weekCount }).map((_, i) => renderWeek())}
-      </ScrollView>
-    );
   };
 
   return (
@@ -50,7 +28,7 @@ export const ListItem = ({ item }: { item: IHabit }) => {
           colorLight={item.colorLight}
         />
       </View>
-      {renderCalendar()}
+      <HabitDaysCalendar color={item.color} colorLight={item.colorLight} activeDates={item.passedDays} />
     </View>
   );
 };
@@ -81,6 +59,7 @@ const s = StyleSheet.create({
   name: {
     fontSize: 18,
     color: '#000',
+    fontFamily: 'RobotoRegular',
   },
   description: {
     fontSize: 15,

@@ -17,13 +17,6 @@ export default function TabLayout() {
           fontFamily: 'RobotoBold',
           fontSize: 20,
         },
-        headerStyle: {
-          height: 110,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexDirection: 'row',
-          borderWidth: 1,
-        },
         headerTitleAlign: 'center',
         headerLeft: () => (
           <IconButton icon="menu" size={24} onPress={() => {}} />
