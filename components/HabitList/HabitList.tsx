@@ -1,43 +1,17 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { Avatar, IconButton } from 'react-native-paper';
+import { StyleSheet, FlatList } from 'react-native';
 import { ListItem } from './ListItem';
 import { IHabit } from '@/types/habits';
+import { colors, colorsLight } from '@/constants/colors';
 
 const data: IHabit[] = [
   {
     id: 1,
-    name: 'У мене немає звичків',
-    description: 'У мене немає звичків',
-  },
-  {
-    id: 2,
-    name: 'Звички',
-    description: 'Звички',
-  },
-  {
-    id: 3,
-    name: 'Статистика',
-    description: 'Статистика',
-  },
-  {
-    id: 4,
-    name: 'Блог',
-    description: 'Блог',
-  },
-  {
-    id: 5,
-    name: 'У мене немає звичків У мене немає звичків У мене немає звичків У мене немає звичків',
-    description: 'У мене немає звичків',
-  },
-  {
-    id: 6,
-    name: 'Звички',
-    description: 'Звички',
-  },
-  {
-    id: 7,
-    name: 'Статистика',
-    description: 'Статистика',
+    name: 'У мене немає звичків У мене немає звичків',
+    description:
+      'У мене немає звичків У мене немає звичків У мене немає звичків',
+    color: colors.yellow,
+    colorLight: colorsLight.yellowLight,
+    passedDays: [],
   },
 ];
 
@@ -46,7 +20,7 @@ export const HabitList = () => {
     <FlatList
       contentContainerStyle={s.list}
       keyExtractor={(item) => String(item.id)}
-      data={data}
+      data={[...data, ...data, ...data, ...data, ...data, ...data, ...data]}
       renderItem={({ item }) => <ListItem item={item} />}
     />
   );
@@ -56,5 +30,6 @@ const s = StyleSheet.create({
   list: {
     gap: 10,
     padding: 15,
+    paddingBottom: 50,
   },
 });
