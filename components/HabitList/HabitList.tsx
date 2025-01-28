@@ -1,8 +1,7 @@
-import { StyleSheet, FlatList } from 'react-native';
-import { ListItem } from './ListItem';
-import { IHabit } from '@/types/habits';
-import { colors, colorsLight } from '@/constants/colors';
+import { StyleSheet, View } from 'react-native';
 
+import { IHabit, colors, colorsLight } from '@/types/habits';
+import { HabitListItem } from '@/components';
 const data: IHabit[] = [
   {
     id: 1,
@@ -46,12 +45,20 @@ const data: IHabit[] = [
 
 export const HabitList = () => {
   return (
-    <FlatList
-      contentContainerStyle={s.list}
-      keyExtractor={(item) => String(item.id)}
-      data={data}
-      renderItem={({ item }) => <ListItem item={item} />}
-    />
+    <View style={s.list}>
+      {data.map((item) => (
+        <HabitListItem key={item.id} item={item} />
+      ))}
+      {data.map((item) => (
+        <HabitListItem key={item.id} item={item} />
+      ))}
+      {data.map((item) => (
+        <HabitListItem key={item.id} item={item} />
+      ))}
+      {data.map((item) => (
+        <HabitListItem key={item.id} item={item} />
+      ))}
+    </View>
   );
 };
 

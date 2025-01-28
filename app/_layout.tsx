@@ -1,8 +1,4 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -21,10 +17,8 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const theme = getActiveTheme();
   const [loaded] = useFonts({
-    RobotoRegular: require('../assets/fonts/Roboto-Regular.ttf'),
+    Roboto: require('../assets/fonts/Roboto-Regular.ttf'),
     RobotoBold: require('../assets/fonts/Roboto-Bold.ttf'),
-    RobotoItalic: require('../assets/fonts/Roboto-Italic.ttf'),
-    RobotoLight: require('../assets/fonts/Roboto-Light.ttf'),
   });
 
   useEffect(() => {
@@ -41,7 +35,14 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <PaperProvider theme={theme}>
         <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="index" />
+          <Stack.Screen
+            name="settings"
+            options={{
+              presentation: 'fullScreenModal',
+              animation: 'slide_from_bottom',
+            }}
+          />
         </Stack>
       </PaperProvider>
       <StatusBar style="auto" />

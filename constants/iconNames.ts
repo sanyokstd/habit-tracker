@@ -1,4 +1,4 @@
-const habitIconNames = {
+export const habitIconNames = {
   alarm: 'alarm-outline',
   bag: 'bag-handle-outline',
   calendar: 'calendar-outline',

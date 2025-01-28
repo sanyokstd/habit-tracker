@@ -12,7 +12,7 @@ export const lightTheme = {
   ...DefaultLightTheme,
   colors: {
     ...DefaultLightTheme.colors,
-    primary: 'rgb(0, 109, 48)',
+    primary: '#388e3c',
     onPrimary: 'rgb(255, 255, 255)',
     primaryContainer: 'rgb(101, 255, 144)',
     onPrimaryContainer: 'rgb(0, 33, 10)',
@@ -49,7 +49,6 @@ export const lightTheme = {
     textContainer: 'rgb(255, 217, 223)',
     onTextContainer: 'rgb(63, 0, 23)',
   },
-  fonts: configureFonts(fontConfig),
   roundness: 8,
 };
 
@@ -58,7 +57,7 @@ export const darkTheme = {
   ...DefaultDarkTheme,
   colors: {
     ...DefaultDarkTheme.colors,
-    primary: 'rgb(44, 227, 113)',
+    primary: '#388e3c',
     onPrimary: 'rgb(0, 57, 22)',
     primaryContainer: 'rgb(0, 83, 35)',
     onPrimaryContainer: 'rgb(101, 255, 144)',
@@ -95,7 +94,6 @@ export const darkTheme = {
     textContainer: 'rgb(124, 41, 65)',
     onTextContainer: 'rgb(255, 217, 223)',
   },
-  fonts: configureFonts(fontConfig),
   roundness: 8,
 };
 
