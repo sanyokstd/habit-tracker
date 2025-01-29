@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 
 import { IHabit, colors, colorsLight } from '@/types/habits';
-import { HabitListItem } from '@/components';
+import { HabitListItem } from './HabitListItem/HabitListItem';
 const data: IHabit[] = [
   {
     id: 1,

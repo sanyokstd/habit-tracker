@@ -12,7 +12,7 @@ export const styles = (theme: MD3Theme) => ({
   header: {
     flexDirection: 'row',
     padding: 15,
-    gap: 10,
+    gap: 20,
     alignItems: 'center',
   },
   logo: {

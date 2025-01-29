@@ -39,7 +39,7 @@ export default function RootLayout() {
           <Stack.Screen
             name="settings"
             options={{
-              presentation: 'fullScreenModal',
+              presentation: 'modal',
               animation: 'slide_from_bottom',
             }}
           />
