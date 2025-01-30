@@ -53,7 +53,7 @@ function AppContent() {
           }}
         />
       </Stack>
-      <StatusBar style="auto" />
+      <StatusBar style={theme.dark ? 'light' : 'dark'} />
     </PaperProvider>
   );
 }
