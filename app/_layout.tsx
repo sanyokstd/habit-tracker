@@ -1,21 +1,20 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
-import 'react-native-reanimated';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { getActiveTheme } from '@/theme/theme';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { ThemeProvider, useThemeContext } from '@/theme/ThemeContext';
 import '@/i18n';
+import { getActiveTheme } from '@/theme/theme';
+import { useFonts } from 'expo-font';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const theme = getActiveTheme();
+  useEffect(() => {
+    SplashScreen.hideAsync();
+  }, []);
+
   const [loaded] = useFonts({
     Roboto: require('../assets/fonts/Roboto-Regular.ttf'),
     RobotoBold: require('../assets/fonts/Roboto-Bold.ttf'),
@@ -32,20 +31,29 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <PaperProvider theme={theme}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index" />
-          <Stack.Screen
-            name="settings"
-            options={{
-              presentation: 'modal',
-              animation: 'slide_from_bottom',
-            }}
-          />
-        </Stack>
-      </PaperProvider>
-      <StatusBar style="auto" />
+    <ThemeProvider>
+      <AppContent />
     </ThemeProvider>
+  );
+}
+
+function AppContent() {
+  const { theme } = useThemeContext();
+  const paperTheme = getActiveTheme(theme);
+
+  return (
+    <PaperProvider theme={paperTheme}>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen
+          name="settings"
+          options={{
+            presentation: 'modal',
+            animation: 'slide_from_bottom',
+          }}
+        />
+      </Stack>
+      <StatusBar style="auto" />
+    </PaperProvider>
   );
 }

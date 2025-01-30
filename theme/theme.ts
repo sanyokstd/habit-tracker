@@ -1,11 +1,5 @@
-import {
-  MD3LightTheme as DefaultLightTheme,
-  MD3DarkTheme as DefaultDarkTheme,
-  MD3Theme,
-  configureFonts,
-} from 'react-native-paper';
-import { Appearance } from 'react-native';
-import { fontConfig } from './fontConfig';
+import { Theme } from '@react-navigation/native';
+import { MD3LightTheme as DefaultLightTheme, MD3DarkTheme as DefaultDarkTheme, MD3Theme } from 'react-native-paper';
 
 // Світла тема
 export const lightTheme = {
@@ -101,7 +95,6 @@ export const darkTheme = {
  * Отримує активну тему залежно від системної теми
  * @returns {MD3Theme} Активна тема (lightTheme або darkTheme)
  */
-export const getActiveTheme = (): MD3Theme => {
-  const colorScheme = Appearance.getColorScheme(); // 'light' або 'dark'
-  return colorScheme === 'dark' ? darkTheme : lightTheme;
+export const getActiveTheme = (theme: Theme): MD3Theme => {
+  return theme.dark ? darkTheme : lightTheme;
 };
