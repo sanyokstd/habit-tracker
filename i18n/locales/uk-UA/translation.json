@@ -1,4 +1,22 @@
 {
   "be": "Be",
-  "better": "Better"
+  "better": "Better",
+  "Settings": {
+    "title": "Налаштування",
+    "general": "Головне",
+    "theme": "Тема",
+    "language": "Мова",
+    "privacyPolicy": "Політика конфіденційності"
+  },
+  "ThemeSettings": {
+    "title": "Тема",
+    "mode": "Мод",
+    "system": "Системна",
+    "light": "Світла",
+    "dark": "Темна"
+  },
+  "LanguageSettings": {
+    "title": "Мова",
+    "changeLanguage": "Змінити мову"
+  }
 }

@@ -1,4 +1,22 @@
 {
   "be": "Be",
-  "better": "Better"
+  "better": "Better",
+  "Settings": {
+    "title": "Settings",
+    "general": "General",
+    "theme": "Theme",
+    "language": "Language",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "ThemeSettings": {
+    "title": "Theme",
+    "mode": "Mode",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "LanguageSettings": {
+    "title": "Language",
+    "changeLanguage": "Change language"
+  }
 }
