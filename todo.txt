@@ -1,0 +1,5 @@
+[x] - refactor habit list, use flatlist
+[] - add "create habit" screen
+[] - add privacy policy screen
+[] - add data base for habits
+[] - add push notifications

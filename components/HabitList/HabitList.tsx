@@ -1,4 +1,5 @@
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IHabit, colors, colorsLight } from '@/types/habits';
 import { HabitListItem } from './HabitListItem/HabitListItem';
@@ -41,31 +42,62 @@ const data: IHabit[] = [
     colorLight: colorsLight.greenLight,
     passedDays: [],
   },
+  {
+    id: 3,
+    name: 'У мене немає звичків 2 У мене немає звичків',
+    description: 'У мене немає звичків 2 У мене немає звичків У мене немає звичків',
+    color: colors.green,
+    colorLight: colorsLight.greenLight,
+    passedDays: [],
+  },
+  {
+    id: 4,
+    name: 'У мене немає звичків 2 У мене немає звичків',
+    description: 'У мене немає звичків 2 У мене немає звичків У мене немає звичків',
+    color: colors.green,
+    colorLight: colorsLight.greenLight,
+    passedDays: [],
+  },
+  {
+    id: 5,
+    name: 'У мене немає звичків 2 У мене немає звичків',
+    description: 'У мене немає звичків 2 У мене немає звичків У мене немає звичків',
+    color: colors.green,
+    colorLight: colorsLight.greenLight,
+    passedDays: [],
+  },
+  {
+    id: 6,
+    name: 'У мене немає звичків 2 У мене немає звичків',
+    description: 'У мене немає звичків 2 У мене немає звичків У мене немає звичків',
+    color: colors.green,
+    colorLight: colorsLight.greenLight,
+    passedDays: [],
+  },
 ];
 
-export const HabitList = () => {
+interface Props {
+  headerComponent: JSX.Element;
+}
+
+export const HabitList = ({ headerComponent }: Props) => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={s.list}>
-      {data.map((item) => (
-        <HabitListItem key={item.id} item={item} />
-      ))}
-      {data.map((item) => (
-        <HabitListItem key={item.id} item={item} />
-      ))}
-      {data.map((item) => (
-        <HabitListItem key={item.id} item={item} />
-      ))}
-      {data.map((item) => (
-        <HabitListItem key={item.id} item={item} />
-      ))}
-    </View>
+    <FlatList
+      ListHeaderComponent={headerComponent}
+      data={data}
+      renderItem={({ item }) => <HabitListItem item={item} />}
+      keyExtractor={(item) => item.id.toString()}
+      contentContainerStyle={[s.list, { paddingTop: insets.top }]}
+    />
   );
 };
 
 const s = StyleSheet.create({
   list: {
     gap: 10,
-    padding: 15,
+    paddingHorizontal: 15,
     paddingBottom: 50,
   },
 });

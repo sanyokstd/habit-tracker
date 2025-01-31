@@ -11,7 +11,7 @@ export const styles = (theme: MD3Theme) => ({
   },
   header: {
     flexDirection: 'row',
-    padding: 15,
+    paddingVertical: 15,
     gap: 20,
     alignItems: 'center',
   },

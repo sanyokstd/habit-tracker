@@ -5,7 +5,7 @@ export const styles = (theme: MD3Theme) => ({
     backgroundColor: theme.colors.background,
   },
   area: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: theme.colors.background,
   },
 });

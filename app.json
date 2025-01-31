@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bebetter.habittraker"
     },
     "plugins": [
       "expo-router",
@@ -43,6 +44,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d99acdbc-d02b-44d1-b1ea-d55e5df7a7bc"
+      }
+    },
+    "owner": "sanyokstd"
   }
 }
