@@ -52,6 +52,13 @@ function AppContent() {
             animation: 'slide_from_bottom',
           }}
         />
+        <Stack.Screen
+          name="new-habit"
+          options={{
+            presentation: 'modal',
+            animation: 'slide_from_bottom',
+          }}
+        />
       </Stack>
       <StatusBar style={theme.dark ? 'light' : 'dark'} />
     </PaperProvider>

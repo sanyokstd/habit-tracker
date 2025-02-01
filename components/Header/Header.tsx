@@ -9,13 +9,10 @@ import { router } from 'expo-router';
 export const Header = () => {
   const { t } = useTranslation();
   const { s, theme } = useTheme(styles);
-  const handleOpenSettings = () => {
-    router.push('/settings');
-  };
 
   return (
     <View style={s.header}>
-      <TouchableOpacity onPress={handleOpenSettings}>
+      <TouchableOpacity onPress={() => router.push('/settings')}>
         <Ionicons name="settings-outline" size={30} color={theme.colors.onBackground} />
       </TouchableOpacity>
 
@@ -25,7 +22,7 @@ export const Header = () => {
       </View>
 
       <View style={s.right}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/new-habit')}>
           <Ionicons name="add-circle-outline" size={35} color={theme.colors.onBackground} />
         </TouchableOpacity>
       </View>

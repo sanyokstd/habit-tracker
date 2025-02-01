@@ -34,6 +34,7 @@ export function LanguageSettings() {
         <MenuBlock title={t('LanguageSettings.changeLanguage')}>
           {languages.map((lang, index) => (
             <SelectItem
+              key={lang.id}
               onPress={() => changeLanguage(lang.id)}
               isActive={currentLanguage === lang.id}
               title={lang.name}
