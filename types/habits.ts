@@ -5,15 +5,15 @@ export const colors = {
   blue: '#1976d2',
 } as const;
 
-export const colorsLight = {
-  yellowLight: 'rgba(251, 192, 45, 0.3)',
-  greenLight: 'rgba(56, 142, 60, 0.3)',
-  redLight: 'rgba(211, 47, 47, 0.3)',
-  blueLight: 'rgba(25, 118, 210, 0.3)',
-} as const;
+export const colorsLight = Object.fromEntries(
+  Object.entries(colors).map(([key, value]) => [`${key}Light`, `${value}4D`])
+) as Record<`${keyof typeof colors}Light`, string>;
 
-export type HabitColor = (typeof colors)[keyof typeof colors];
-export type HabitColorLight = (typeof colorsLight)[keyof typeof colorsLight];
+export type ColorKeys = keyof typeof colors;
+export type ColorLightKeys = keyof typeof colorsLight;
+
+export type HabitColor = (typeof colors)[ColorKeys];
+export type HabitColorLight = (typeof colorsLight)[ColorLightKeys];
 
 export interface IHabit {
   id: number;
@@ -22,4 +22,14 @@ export interface IHabit {
   color: HabitColor;
   colorLight: HabitColorLight;
   passedDays: string[];
+  goal?: number;
 }
+
+export type HabitFormData = {
+  name: string;
+  desc: string;
+  icon: string;
+  color: string;
+  goal: number;
+  reminder: string;
+};

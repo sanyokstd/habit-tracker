@@ -1,13 +1,16 @@
-export const habitIconNames = {
-  alarm: 'alarm-outline',
-  bag: 'bag-handle-outline',
-  calendar: 'calendar-outline',
-  sport: 'barbell-outline',
-  sleep: 'bed-outline',
-  art: 'brush-outline',
-  fix: 'build-outline',
-  card: 'card-outline',
-  chart: 'chart-bar-outline',
-  code: 'code-slash',
-  palette: 'color-palette-outline',
-};
+import { Ionicons } from '@expo/vector-icons';
+
+export type IoniconName = keyof typeof Ionicons.glyphMap;
+
+export const habitIconNames: IoniconName[] = [
+  'alarm-outline',
+  'bag-handle-outline',
+  'calendar-outline',
+  'barbell-outline',
+  'bed-outline',
+  'brush-outline',
+  'build-outline',
+  'card-outline',
+  'code-slash',
+  'color-palette-outline',
+];

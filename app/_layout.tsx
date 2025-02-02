@@ -45,20 +45,8 @@ function AppContent() {
     <PaperProvider theme={paperTheme}>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
-        <Stack.Screen
-          name="settings"
-          options={{
-            presentation: 'modal',
-            animation: 'slide_from_bottom',
-          }}
-        />
-        <Stack.Screen
-          name="new-habit"
-          options={{
-            presentation: 'modal',
-            animation: 'slide_from_bottom',
-          }}
-        />
+        <Stack.Screen name="settings" options={{ animation: 'slide_from_left' }} />
+        <Stack.Screen name="new-habit" />
       </Stack>
       <StatusBar style={theme.dark ? 'light' : 'dark'} />
     </PaperProvider>

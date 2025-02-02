@@ -5,3 +5,6 @@ export { MenuBlock } from './MenuBlock/MenuBlock';
 export { DetailHeader } from './DetailHeader/DetailHeader';
 export { SelectItem } from './SelectItem/SelectItem';
 export { BottomGradient } from './BottomGradient/BottomGradient';
+export { LinkToForm } from './LinkToForm/LinkToForm';
+export { IconChip } from './IconChip/IconChip';
+export { ColorChip } from './ColorChip/ColorChip';
