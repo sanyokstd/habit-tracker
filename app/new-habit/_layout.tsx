@@ -13,7 +13,7 @@ export default function NewHabitLayout() {
       icon: habitIconNames[0],
       color: colors[0],
       goal: 0,
-      reminder: '',
+      reminder: [],
     },
     mode: 'onBlur',
     reValidateMode: 'onBlur',

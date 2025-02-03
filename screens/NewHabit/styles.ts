@@ -44,13 +44,4 @@ export const styles = (theme: MD3Theme) => ({
     gap: 10,
     flexWrap: 'wrap',
   },
-  iconButton: {
-    borderWidth: 1,
-    borderColor: theme.colors.outlineVariant,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 40,
-    height: 40,
-  },
 });

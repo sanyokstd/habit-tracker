@@ -26,7 +26,7 @@ export function Goal() {
   const inputRef = useRef<RNTextInput>(null);
 
   const handleSelect = (value: number) => {
-    if (value < 0) return; // Не встановлюємо від’ємні значення
+    if (value < 0) return;
     setValue('goal', value);
     setIsCustom(false);
   };
@@ -67,7 +67,7 @@ export function Goal() {
                   required: 'Введіть кількість днів',
                   min: { value: 0, message: 'Мінімальне значення - 0' },
                 }}
-                render={({ field: { onChange, value } }) => (
+                render={({ field: {  value } }) => (
                   <TextInput
                     ref={inputRef}
                     outlineColor={theme.colors.onBackground}

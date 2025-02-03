@@ -9,6 +9,7 @@ import { habitIconNames } from '@/constants/iconNames';
 import { getColorValues } from '@/utils/getColorValues';
 import { useRouter } from 'expo-router';
 import { HabitFormData } from '@/types/habits';
+import { useReminderDays } from '@/hooks/useReminderDays';
 
 export const NewHabit: React.FC = () => {
   const router = useRouter();
@@ -23,6 +24,9 @@ export const NewHabit: React.FC = () => {
     formState: { isValid },
   } = useFormContext<HabitFormData>();
   const goal = watch('goal');
+  const reminder = watch('reminder');
+  const reminderList = useReminderDays(reminder);
+  const reminderDays = reminderList.length === 0 ? 'none' : reminderList.map((item) => item.title).join(', ');
 
   const onSubmit = (data: HabitFormData) => {
     console.log('Form Data:', data);
@@ -68,7 +72,7 @@ export const NewHabit: React.FC = () => {
             value={goal === 0 ? 'none' : `${goal} днів`}
             onPress={() => router.push('/new-habit/goal')}
           />
-          <LinkToForm label="Reminder" value="none" onPress={() => router.push('/new-habit/reminder')} />
+          <LinkToForm label="Reminder" value={reminderDays} onPress={() => router.push('/new-habit/reminder')} />
           <View style={s.formBlock}>
             <Text style={s.formLabel}>Icon</Text>
             <View style={s.list}>

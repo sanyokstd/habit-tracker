@@ -15,6 +15,18 @@ export type ColorLightKeys = keyof typeof colorsLight;
 export type HabitColor = (typeof colors)[ColorKeys];
 export type HabitColorLight = (typeof colorsLight)[ColorLightKeys];
 
+export const remindersDays = {
+  monday: 1,
+  tuesday: 2,
+  wednesday: 3,
+  thursday: 4,
+  friday: 5,
+  saturday: 6,
+  sunday: 7,
+} as const;
+
+export type ReminderValue = (typeof remindersDays)[keyof typeof remindersDays];
+
 export interface IHabit {
   id: number;
   name: string;
@@ -23,6 +35,7 @@ export interface IHabit {
   colorLight: HabitColorLight;
   passedDays: string[];
   goal?: number;
+  reminder: ReminderValue[];
 }
 
 export type HabitFormData = {
@@ -31,5 +44,5 @@ export type HabitFormData = {
   icon: string;
   color: string;
   goal: number;
-  reminder: string;
+  reminder: ReminderValue[];
 };
