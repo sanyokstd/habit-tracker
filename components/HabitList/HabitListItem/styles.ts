@@ -48,4 +48,13 @@ export const styles = (theme: MD3Theme) => ({
     height: 10,
     borderRadius: 2,
   },
+  goal: {
+    flexDirection: 'row',
+    gap: 4,
+    justifyContent: 'flex-end',
+  },
+  goalText: {
+    fontSize: 15,
+    color: theme.colors.onBackground,
+  },
 });

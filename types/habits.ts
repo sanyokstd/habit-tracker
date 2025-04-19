@@ -35,7 +35,7 @@ export interface IHabit {
   colorLight: HabitColorLight;
   passedDays: string[];
   goal?: number;
-  reminder: ReminderValue[];
+  goalPassed?: number;
 }
 
 export type HabitFormData = {

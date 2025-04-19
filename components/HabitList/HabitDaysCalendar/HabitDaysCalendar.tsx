@@ -1,7 +1,10 @@
+import { useTheme } from '@/hooks/useTheme';
 import { HabitColor, HabitColorLight } from '@/types/habits';
 import { getLastWeeksDates } from '@/utils/getLastWeeksDates';
 import { Fragment, useEffect, useRef } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import { ScrollView, Text, View } from 'react-native';
+import { styles } from './styles';
 
 interface Props {
   activeDates: string[];
@@ -10,6 +13,9 @@ interface Props {
 }
 
 export const HabitDaysCalendar = ({ activeDates, color, colorLight }: Props) => {
+  const { t } = useTranslation();
+  const { s } = useTheme(styles);
+
   const lastWeeksDates = getLastWeeksDates().reverse();
   const scrollViewRef = useRef<ScrollView>(null);
 
@@ -25,7 +31,12 @@ export const HabitDaysCalendar = ({ activeDates, color, colorLight }: Props) => 
         <View style={s.calendarColumn} key={weekDates[0]}>
           {weekDates.map((date) => {
             const isActive = activeDates.includes(date);
-            return <View key={date} style={[s.calendarDay, { backgroundColor: isActive ? color : colorLight }]} />;
+            return (
+              <View
+                key={date}
+                style={[s.calendarDay, { backgroundColor: isActive ? color : colorLight }]}
+              />
+            );
           })}
         </View>
       );
@@ -37,33 +48,24 @@ export const HabitDaysCalendar = ({ activeDates, color, colorLight }: Props) => 
     }
 
     return (
-      <ScrollView
-        ref={scrollViewRef}
-        horizontal
-        pagingEnabled
-        contentContainerStyle={s.calendar}
-        showsHorizontalScrollIndicator={false}
-      >
-        {weeks.map((weekDates) => renderWeek(weekDates))}
-      </ScrollView>
+      <View style={s.mainView}>
+        <View style={s.daysView}>
+          <Text style={s.dayText}>{t('HabitDaysCalendar.mon')}</Text>
+          <Text style={s.dayText}>{t('HabitDaysCalendar.wed')}</Text>
+          <Text style={s.dayText}>{t('HabitDaysCalendar.sun')}</Text>
+        </View>
+        <ScrollView
+          ref={scrollViewRef}
+          horizontal
+          pagingEnabled
+          contentContainerStyle={s.calendar}
+          showsHorizontalScrollIndicator={false}
+        >
+          {weeks.map((weekDates) => renderWeek(weekDates))}
+        </ScrollView>
+      </View>
     );
   };
 
   return <Fragment>{renderCalendar()}</Fragment>;
 };
-
-const s = StyleSheet.create({
-  calendar: {
-    flexDirection: 'row-reverse',
-    gap: 4,
-  },
-  calendarColumn: {
-    flexDirection: 'column-reverse',
-    gap: 4,
-  },
-  calendarDay: {
-    width: 10,
-    height: 10,
-    borderRadius: 2,
-  },
-});

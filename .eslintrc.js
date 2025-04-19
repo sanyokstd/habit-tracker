@@ -8,5 +8,6 @@ module.exports = {
   plugins: ['react', 'react-native'],
   rules: {
     'prettier/prettier': 'error', // Show Prettier issues as ESLint errors
+    'object-curly-newline': ['error', { multiline: true, consistent: true }],
   },
 };

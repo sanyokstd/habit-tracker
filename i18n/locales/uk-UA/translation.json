@@ -47,5 +47,13 @@
     "sun": "нд",
     "selectAll": "Вибрати всі",
     "unselectAll": "Скасувати вибір"
+  },
+  "HabitListItem": {
+    "goal": "Ціль"
+  },
+  "HabitDaysCalendar": {
+    "mon": "Пн",
+    "wed": "Ср",
+    "sun": "Нд"
   }
 }

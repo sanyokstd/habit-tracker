@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IHabit, colors, colorsLight } from '@/types/habits';
@@ -32,7 +32,10 @@ const data: IHabit[] = [
       '2025-01-03',
       '2025-01-02',
       '2025-01-01',
+      '2025-04-20',
     ],
+    goal: 10,
+    goalPassed: 5,
   },
   {
     id: 2,

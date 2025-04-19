@@ -1,13 +1,15 @@
-import { IHabit } from '@/types/habits';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { useState } from 'react';
-import { HabitDaysCalendar } from '../HabitDaysCalendar/HabitDaysCalendar';
-import { HabitCheckbox } from '../HabitCheckbox/HabitCheckbox';
-import { styles } from '../HabitListItem/styles';
 import { useTheme } from '@/hooks/useTheme';
+import { IHabit } from '@/types/habits';
 import { Ionicons } from '@expo/vector-icons';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Text, View } from 'react-native';
+import { HabitCheckbox } from '../HabitCheckbox/HabitCheckbox';
+import { HabitDaysCalendar } from '../HabitDaysCalendar/HabitDaysCalendar';
+import { styles } from '../HabitListItem/styles';
 
 export const HabitListItem = ({ item }: { item: IHabit }) => {
+  const { t } = useTranslation();
   const { s, theme } = useTheme(styles);
   const [checked, setChecked] = useState(false);
   const handleCheckboxPress = () => {
@@ -35,7 +37,20 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
           colorLight={item.colorLight}
         />
       </View>
-      <HabitDaysCalendar color={item.color} colorLight={item.colorLight} activeDates={item.passedDays} />
+
+      <HabitDaysCalendar
+        color={item.color}
+        colorLight={item.colorLight}
+        activeDates={item.passedDays}
+      />
+      {item.goal ? (
+        <View style={s.goal}>
+          <Text style={s.goalText}>{t('HabitListItem.goal')}: </Text>
+          <Text style={s.goalText}>
+            {item.goalPassed} / {item.goal}
+          </Text>
+        </View>
+      ) : null}
     </View>
   );
 };

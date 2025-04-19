@@ -47,5 +47,13 @@
     "sun": "sun",
     "selectAll": "Select all",
     "unselectAll": "Unselect all"
+  },
+  "HabitListItem": {
+    "goal": "Goal"
+  },
+  "HabitDaysCalendar": {
+    "mon": "Mon",
+    "wed": "Wed",
+    "Sun": "Sun"
   }
 }
