@@ -15,8 +15,37 @@
     "light": "Light",
     "dark": "Dark"
   },
-  "LanguageSettings": {
-    "title": "Language",
-    "changeLanguage": "Change language"
+  "LanguageSettings": { "title": "Language", "changeLanguage": "Change language" },
+  "NewHabit": {
+    "title": "New habit",
+    "name": "Name",
+    "desc": "Description",
+    "goal": "Goal",
+    "reminder": "Reminder",
+    "icon": "Icon",
+    "color": "Color",
+    "save": "SAVE",
+    "none": "none",
+    "days": "days"
+  },
+  "Goal": {
+    "title": "Goal",
+    "quantityDays": "Number of days",
+    "none": "none",
+    "days": "days",
+    "another": "another goal"
+  },
+  "Reminder": {
+    "title": "Reminder",
+    "days": "Days",
+    "mon": "mon",
+    "tue": "tue",
+    "wed": "wed",
+    "thu": "thu",
+    "fri": "fri",
+    "sat": "sat",
+    "sun": "sun",
+    "selectAll": "Select all",
+    "unselectAll": "Unselect all"
   }
 }

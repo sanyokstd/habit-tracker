@@ -4,34 +4,13 @@ import { useTranslation as useTranslationOriginal } from 'react-i18next';
 export const useReminderDays = (idsToFilter?: ReminderValue[]) => {
   const { t } = useTranslationOriginal();
   const remindersDaysList = [
-    {
-      id: remindersDays.monday,
-      title: 'Mon',
-    },
-    {
-      id: remindersDays.tuesday,
-      title: 'Tue',
-    },
-    {
-      id: remindersDays.wednesday,
-      title: 'Wed',
-    },
-    {
-      id: remindersDays.thursday,
-      title: 'Thu',
-    },
-    {
-      id: remindersDays.friday,
-      title: 'Fri',
-    },
-    {
-      id: remindersDays.saturday,
-      title: 'Sat',
-    },
-    {
-      id: remindersDays.sunday,
-      title: 'Sun',
-    },
+    { id: remindersDays.monday, title: t('Reminder.mon') },
+    { id: remindersDays.tuesday, title: t('Reminder.tue') },
+    { id: remindersDays.wednesday, title: t('Reminder.wed') },
+    { id: remindersDays.thursday, title: t('Reminder.thu') },
+    { id: remindersDays.friday, title: t('Reminder.fri') },
+    { id: remindersDays.saturday, title: t('Reminder.sat') },
+    { id: remindersDays.sunday, title: t('Reminder.sun') },
   ];
 
   if (idsToFilter) {

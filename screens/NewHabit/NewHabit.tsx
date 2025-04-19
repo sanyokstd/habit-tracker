@@ -1,44 +1,48 @@
 import { BottomGradient, ColorChip, IconChip, LinkToForm, ModalHeader } from '@/components';
-import { ScrollView, Text, KeyboardAvoidingView, View, Platform } from 'react-native';
-import { useTheme } from '@/hooks/useTheme';
-import { styles } from './styles';
-import { Button, TextInput } from 'react-native-paper';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Controller, useFormContext } from 'react-hook-form';
 import { habitIconNames } from '@/constants/iconNames';
+import { useReminderDays } from '@/hooks/useReminderDays';
+import { useTheme } from '@/hooks/useTheme';
+import { HabitFormData } from '@/types/habits';
 import { getColorValues } from '@/utils/getColorValues';
 import { useRouter } from 'expo-router';
-import { HabitFormData } from '@/types/habits';
-import { useReminderDays } from '@/hooks/useReminderDays';
+import { Controller, useFormContext } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
+import { Button, TextInput } from 'react-native-paper';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { styles } from './styles';
 
 export const NewHabit: React.FC = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const colors = getColorValues(false);
   const { s, theme } = useTheme(styles);
   const insets = useSafeAreaInsets();
-  const {
-    control,
-    handleSubmit,
-    setValue,
-    watch,
-    formState: { isValid },
-  } = useFormContext<HabitFormData>();
+  const { control, handleSubmit, setValue, watch } = useFormContext<HabitFormData>();
+  const name = watch('name');
   const goal = watch('goal');
   const reminder = watch('reminder');
   const reminderList = useReminderDays(reminder);
-  const reminderDays = reminderList.length === 0 ? 'none' : reminderList.map((item) => item.title).join(', ');
+  const reminderDays =
+    reminderList.length === 0
+      ? t('NewHabit.none')
+      : reminderList.map((item) => item.title).join(', ');
 
   const onSubmit = (data: HabitFormData) => {
     console.log('Form Data:', data);
+    router.back();
   };
 
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={s.keyboard}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={s.keyboard}
+    >
       <View style={[s.area, { paddingTop: insets.top }]}>
-        <ModalHeader title="New habit" />
+        <ModalHeader title={t('NewHabit.title')} />
         <ScrollView contentContainerStyle={s.content}>
           <View style={s.formBlock}>
-            <Text style={s.formLabel}>Name</Text>
+            <Text style={s.formLabel}>{t('NewHabit.name')}</Text>
             <Controller
               control={control}
               name="name"
@@ -53,7 +57,7 @@ export const NewHabit: React.FC = () => {
             />
           </View>
           <View style={s.formBlock}>
-            <Text style={s.formLabel}>Description</Text>
+            <Text style={s.formLabel}>{t('NewHabit.desc')}</Text>
             <Controller
               control={control}
               name="desc"
@@ -68,13 +72,17 @@ export const NewHabit: React.FC = () => {
             />
           </View>
           <LinkToForm
-            label="Goal"
-            value={goal === 0 ? 'none' : `${goal} днів`}
+            label={t('NewHabit.goal')}
+            value={goal === 0 ? t('NewHabit.none') : `${goal} ${t('NewHabit.days')}`}
             onPress={() => router.push('/new-habit/goal')}
           />
-          <LinkToForm label="Reminder" value={reminderDays} onPress={() => router.push('/new-habit/reminder')} />
+          <LinkToForm
+            label={t('NewHabit.reminder')}
+            value={reminderDays}
+            onPress={() => router.push('/new-habit/reminder')}
+          />
           <View style={s.formBlock}>
-            <Text style={s.formLabel}>Icon</Text>
+            <Text style={s.formLabel}>{t('NewHabit.icon')}</Text>
             <View style={s.list}>
               {habitIconNames.map((item) => (
                 <IconChip
@@ -87,7 +95,7 @@ export const NewHabit: React.FC = () => {
             </View>
           </View>
           <View style={s.formBlock}>
-            <Text style={s.formLabel}>Color</Text>
+            <Text style={s.formLabel}>{t('NewHabit.color')}</Text>
             <View style={s.list}>
               {colors.map((item) => (
                 <ColorChip
@@ -106,11 +114,11 @@ export const NewHabit: React.FC = () => {
           style={[s.saveButtonWrapper, { bottom: insets.bottom + 15 }]}
           contentStyle={s.saveButtonContent}
           mode="contained"
-          onPress={handleSubmit(onSubmit)}
+          onPress={handleSubmit((data) => onSubmit(data))}
           textColor="#fff"
-          disabled={!isValid}
+          disabled={!name}
         >
-          SAVE
+          {t('NewHabit.save')}
         </Button>
       </View>
     </KeyboardAvoidingView>

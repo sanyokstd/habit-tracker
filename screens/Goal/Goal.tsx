@@ -1,14 +1,13 @@
+import { DetailHeader, MenuBlock, SelectItem } from '@/components';
+import { useTheme } from '@/hooks/useTheme';
+import { HabitFormData } from '@/types/habits';
+import React, { useRef, useState } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { TextInput as RNTextInput, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './styles';
-import { useTheme } from '@/hooks/useTheme';
-import { DetailHeader, MenuBlock, SelectItem } from '@/components';
-import { useTranslation } from 'react-i18next';
-import { View, Text as RNText, TextInput as RNTextInput } from 'react-native';
-import { Controller, useFormContext } from 'react-hook-form';
-import { HabitFormData } from '@/types/habits';
-import { TextInput } from 'react-native-paper';
-import { useRef, useState } from 'react';
-import React from 'react';
 
 export function Goal() {
   const { s, theme } = useTheme(styles);
@@ -49,25 +48,42 @@ export function Goal() {
 
   return (
     <SafeAreaView style={s.area}>
-      <DetailHeader title={'Goal'} />
+      <DetailHeader title={t('Goal.title')} />
       <View style={s.content}>
-        <MenuBlock title="Кількість днів">
-          <SelectItem title="none" onPress={() => handleSelect(0)} isActive={!isCustom && goal === 0} />
-          <SelectItem title="7 днів" onPress={() => handleSelect(7)} isActive={!isCustom && goal === 7} />
-          <SelectItem title="30 днів" onPress={() => handleSelect(30)} isActive={!isCustom && goal === 30} />
-          <SelectItem title="365 днів" onPress={() => handleSelect(365)} isActive={!isCustom && goal === 365} />
-          <SelectItem title="Інша ціль" onPress={handleSetIsCustom} isActive={isCustom} withDivider={false} />
+        <MenuBlock title={t('Goal.quantityDays')}>
+          <SelectItem
+            title={t('Goal.none')}
+            onPress={() => handleSelect(0)}
+            isActive={!isCustom && goal === 0}
+          />
+          <SelectItem
+            title={`7 ${t('Goal.days')}`}
+            onPress={() => handleSelect(7)}
+            isActive={!isCustom && goal === 7}
+          />
+          <SelectItem
+            title={`30 ${t('Goal.days')}`}
+            onPress={() => handleSelect(30)}
+            isActive={!isCustom && goal === 30}
+          />
+          <SelectItem
+            title={`375 ${t('Goal.days')}`}
+            onPress={() => handleSelect(365)}
+            isActive={!isCustom && goal === 365}
+          />
+          <SelectItem
+            title={t('Goal.another')}
+            onPress={handleSetIsCustom}
+            isActive={isCustom}
+            withDivider={false}
+          />
           {isCustom && (
             <>
               <Controller
                 control={control}
                 name="goal"
                 defaultValue={0}
-                rules={{
-                  required: 'Введіть кількість днів',
-                  min: { value: 0, message: 'Мінімальне значення - 0' },
-                }}
-                render={({ field: {  value } }) => (
+                render={({ field: { value } }) => (
                   <TextInput
                     ref={inputRef}
                     outlineColor={theme.colors.onBackground}
@@ -81,7 +97,6 @@ export function Goal() {
                   />
                 )}
               />
-              {errors.goal && <RNText style={{ color: theme.colors.error }}>{errors.goal.message}</RNText>}
             </>
           )}
         </MenuBlock>

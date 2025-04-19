@@ -1,17 +1,16 @@
+import { DetailHeader } from '@/components';
+import { useReminderDays } from '@/hooks/useReminderDays';
+import { useTheme } from '@/hooks/useTheme';
+import { HabitFormData, ReminderValue } from '@/types/habits';
+import { useFormContext } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { Button } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './styles';
-import { useTheme } from '@/hooks/useTheme';
-import { DetailHeader } from '@/components';
-import { useTranslation } from 'react-i18next';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { HabitFormData, remindersDays, ReminderValue } from '@/types/habits';
-import { useState } from 'react';
-import { Button } from 'react-native-paper';
-import { useFormContext } from 'react-hook-form';
-import { useReminderDays } from '@/hooks/useReminderDays';
 
 export function Reminder() {
-  const { s, theme } = useTheme(styles);
+  const { s } = useTheme(styles);
   const { t } = useTranslation();
   const { setValue, watch } = useFormContext<HabitFormData>();
   const reminder = watch('reminder');
@@ -42,9 +41,9 @@ export function Reminder() {
 
   return (
     <SafeAreaView style={s.area}>
-      <DetailHeader title={'Reminder'} />
+      <DetailHeader title={t('Reminder.title')} />
       <View style={s.content}>
-        <Text style={s.formLabel}>{'Days'}</Text>
+        <Text style={s.formLabel}>{t('days')}</Text>
         <View style={s.list}>
           {list.map((item) => (
             <TouchableOpacity
@@ -58,7 +57,7 @@ export function Reminder() {
         </View>
         <View style={s.selectAllView}>
           <Button mode="text" onPress={handleSelectAll}>
-            {isSelectedAll ? 'Unselect all' : 'Select all'}
+            {isSelectedAll ? t('Reminder.unselectAll') : t('Reminder.selectAll')}
           </Button>
         </View>
       </View>

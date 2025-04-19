@@ -15,8 +15,37 @@
     "light": "Світла",
     "dark": "Темна"
   },
-  "LanguageSettings": {
-    "title": "Мова",
-    "changeLanguage": "Змінити мову"
+  "LanguageSettings": { "title": "Мова", "changeLanguage": "Змінити мову" },
+  "NewHabit": {
+    "title": "Нова звичка",
+    "name": "Назва",
+    "desc": "Опис",
+    "goal": "Ціль",
+    "reminder": "Нагадування",
+    "icon": "Іконка",
+    "color": "Колір",
+    "save": "ЗБЕРЕГТИ",
+    "none": "немає",
+    "days": "днів"
+  },
+  "Goal": {
+    "title": "Ціль",
+    "quantityDays": "Кількість днів",
+    "none": "немає",
+    "days": "днів",
+    "another": "інша ціль"
+  },
+  "Reminder": {
+    "title": "Нагадування",
+    "days": "Дні",
+    "mon": "пн",
+    "tue": "вт",
+    "wed": "ср",
+    "thu": "чт",
+    "fri": "пт",
+    "sat": "сб",
+    "sun": "нд",
+    "selectAll": "Вибрати всі",
+    "unselectAll": "Скасувати вибір"
   }
 }
