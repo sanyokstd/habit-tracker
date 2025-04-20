@@ -1,5 +1,4 @@
 import { useTheme } from '@/hooks/useTheme';
-import { HabitColor, HabitColorLight } from '@/types/habits';
 import { getLastWeeksDates } from '@/utils/getLastWeeksDates';
 import { Fragment, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,8 +7,8 @@ import { styles } from './styles';
 
 interface Props {
   activeDates: string[];
-  color: HabitColor;
-  colorLight: HabitColorLight;
+  color: string;
+  colorLight: string;
 }
 
 export const HabitDaysCalendar = ({ activeDates, color, colorLight }: Props) => {

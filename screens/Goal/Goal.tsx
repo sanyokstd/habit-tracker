@@ -1,6 +1,6 @@
 import { DetailHeader, MenuBlock, SelectItem } from '@/components';
 import { useTheme } from '@/hooks/useTheme';
-import { HabitFormData } from '@/types/habits';
+import { IHabit } from '@/types/habits';
 import React, { useRef, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +18,7 @@ export function Goal() {
     watch,
     formState: { errors },
     trigger,
-  } = useFormContext<HabitFormData>();
+  } = useFormContext<IHabit>();
   const goal = watch('goal');
   const isGoalIsCustom = goal !== 0 && goal !== 7 && goal !== 30 && goal !== 365;
   const [isCustom, setIsCustom] = useState(isGoalIsCustom);
@@ -67,7 +67,7 @@ export function Goal() {
             isActive={!isCustom && goal === 30}
           />
           <SelectItem
-            title={`375 ${t('Goal.days')}`}
+            title={`365 ${t('Goal.days')}`}
             onPress={() => handleSelect(365)}
             isActive={!isCustom && goal === 365}
           />

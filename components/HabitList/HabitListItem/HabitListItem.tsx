@@ -19,7 +19,7 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
   return (
     <View style={s.item}>
       <View style={s.topRow}>
-        <View style={[s.icon, { backgroundColor: item.colorLight }]}>
+        <View style={[s.icon, { backgroundColor: item.color + '4D' }]}>
           <Ionicons name="alarm-outline" size={24} color={theme.colors.onBackground} />
         </View>
         <View style={s.infoBlock}>
@@ -34,13 +34,13 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
           checked={checked}
           handlePress={handleCheckboxPress}
           color={item.color}
-          colorLight={item.colorLight}
+          colorLight={item.color + '4D'}
         />
       </View>
 
       <HabitDaysCalendar
         color={item.color}
-        colorLight={item.colorLight}
+        colorLight={item.color + '4D'}
         activeDates={item.passedDays}
       />
       {item.goal ? (

@@ -1,3 +1,5 @@
+import { IoniconName } from '@/constants/iconNames';
+
 export const colors = {
   yellow: '#fbc02d',
   green: '#388e3c',
@@ -5,15 +7,9 @@ export const colors = {
   blue: '#1976d2',
 } as const;
 
-export const colorsLight = Object.fromEntries(
-  Object.entries(colors).map(([key, value]) => [`${key}Light`, `${value}4D`])
-) as Record<`${keyof typeof colors}Light`, string>;
-
 export type ColorKeys = keyof typeof colors;
-export type ColorLightKeys = keyof typeof colorsLight;
 
 export type HabitColor = (typeof colors)[ColorKeys];
-export type HabitColorLight = (typeof colorsLight)[ColorLightKeys];
 
 export const remindersDays = {
   monday: 1,
@@ -32,17 +28,9 @@ export interface IHabit {
   name: string;
   description: string;
   color: HabitColor;
-  colorLight: HabitColorLight;
+  icon: IoniconName;
   passedDays: string[];
+  reminder: ReminderValue[];
   goal?: number;
   goalPassed?: number;
 }
-
-export type HabitFormData = {
-  name: string;
-  desc: string;
-  icon: string;
-  color: string;
-  goal: number;
-  reminder: ReminderValue[];
-};

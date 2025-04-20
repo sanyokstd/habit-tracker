@@ -2,8 +2,8 @@ import { BottomGradient, ColorChip, IconChip, LinkToForm, ModalHeader } from '@/
 import { habitIconNames } from '@/constants/iconNames';
 import { useReminderDays } from '@/hooks/useReminderDays';
 import { useTheme } from '@/hooks/useTheme';
-import { HabitFormData } from '@/types/habits';
-import { getColorValues } from '@/utils/getColorValues';
+import { useHabitStore } from '@/store/habitStore';
+import { colors, IHabit } from '@/types/habits';
 import { useRouter } from 'expo-router';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -13,12 +13,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { styles } from './styles';
 
 export const NewHabit: React.FC = () => {
+  const { addHabit } = useHabitStore();
   const { t } = useTranslation();
   const router = useRouter();
-  const colors = getColorValues(false);
   const { s, theme } = useTheme(styles);
   const insets = useSafeAreaInsets();
-  const { control, handleSubmit, setValue, watch } = useFormContext<HabitFormData>();
+  const { control, handleSubmit, setValue, watch } = useFormContext<IHabit>();
   const name = watch('name');
   const goal = watch('goal');
   const reminder = watch('reminder');
@@ -28,8 +28,8 @@ export const NewHabit: React.FC = () => {
       ? t('NewHabit.none')
       : reminderList.map((item) => item.title).join(', ');
 
-  const onSubmit = (data: HabitFormData) => {
-    console.log('Form Data:', data);
+  const onSubmit = (data: IHabit) => {
+    addHabit(data);
     router.back();
   };
 
@@ -52,6 +52,8 @@ export const NewHabit: React.FC = () => {
                   mode="outlined"
                   value={value}
                   onChangeText={onChange}
+                  maxLength={50}
+                  multiline
                 />
               )}
             />
@@ -60,13 +62,15 @@ export const NewHabit: React.FC = () => {
             <Text style={s.formLabel}>{t('NewHabit.desc')}</Text>
             <Controller
               control={control}
-              name="desc"
+              name="description"
               render={({ field: { onChange, value } }) => (
                 <TextInput
                   outlineColor={theme.colors.onBackground}
                   mode="outlined"
                   value={value}
                   onChangeText={onChange}
+                  maxLength={150}
+                  multiline
                 />
               )}
             />
@@ -97,7 +101,7 @@ export const NewHabit: React.FC = () => {
           <View style={s.formBlock}>
             <Text style={s.formLabel}>{t('NewHabit.color')}</Text>
             <View style={s.list}>
-              {colors.map((item) => (
+              {Object.values(colors).map((item) => (
                 <ColorChip
                   key={item}
                   color={item}

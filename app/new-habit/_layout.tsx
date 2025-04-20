@@ -1,32 +1,20 @@
-import { HabitFormData } from '@/types/habits';
-import { getColorValues } from '@/utils/getColorValues';
+import { habitIconNames } from '@/constants/iconNames';
+import { colors, IHabit } from '@/types/habits';
 import { Stack } from 'expo-router';
 import { FormProvider, useForm } from 'react-hook-form';
-import { habitIconNames } from '@/constants/iconNames';
 
 export default function NewHabitLayout() {
-  const colors = getColorValues(false);
-  const formMethods = useForm<HabitFormData>({
+  const formMethods = useForm<IHabit>({
     defaultValues: {
       name: '',
-      desc: '',
+      description: '',
       icon: habitIconNames[0],
-      color: colors[0],
+      color: colors.yellow,
       goal: 0,
       reminder: [],
+      passedDays: [],
     },
     mode: 'onBlur',
-    reValidateMode: 'onBlur',
-    resolver: undefined,
-    criteriaMode: 'all',
-  });
-
-  formMethods.register('name', {
-    required: 'Name is required',
-  });
-
-  formMethods.register('desc', {
-    required: 'Description is required',
   });
 
   return (

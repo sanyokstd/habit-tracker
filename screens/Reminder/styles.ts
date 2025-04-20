@@ -36,6 +36,9 @@ export const styles = (theme: MD3Theme) => ({
     fontSize: 16,
     fontFamily: 'Roboto',
   },
+  textActive: {
+    color: theme.colors.background,
+  },
   selectAllView: {
     flexDirection: 'row',
     justifyContent: 'flex-end',

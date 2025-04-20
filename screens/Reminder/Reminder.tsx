@@ -1,7 +1,7 @@
 import { DetailHeader } from '@/components';
 import { useReminderDays } from '@/hooks/useReminderDays';
 import { useTheme } from '@/hooks/useTheme';
-import { HabitFormData, ReminderValue } from '@/types/habits';
+import { IHabit, ReminderValue } from '@/types/habits';
 import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Text, TouchableOpacity, View } from 'react-native';
@@ -12,7 +12,7 @@ import { styles } from './styles';
 export function Reminder() {
   const { s } = useTheme(styles);
   const { t } = useTranslation();
-  const { setValue, watch } = useFormContext<HabitFormData>();
+  const { setValue, watch } = useFormContext<IHabit>();
   const reminder = watch('reminder');
   const list = useReminderDays();
 
@@ -51,7 +51,9 @@ export function Reminder() {
               style={[s.dayButton, reminder.includes(item.id) ? s.dayButtonSelected : null]}
               onPress={() => onPress(item.id)}
             >
-              <Text style={s.text}>{item.title}</Text>
+              <Text style={[s.text, reminder.includes(item.id) ? s.textActive : null]}>
+                {item.title}
+              </Text>
             </TouchableOpacity>
           ))}
         </View>
