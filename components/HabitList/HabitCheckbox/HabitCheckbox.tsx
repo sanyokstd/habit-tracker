@@ -1,6 +1,7 @@
 import { useTheme } from '@/hooks/useTheme';
 import { HabitColor } from '@/types/habits';
 import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
 import { TouchableOpacity, useColorScheme } from 'react-native';
 import { styles } from './styles';
 
@@ -20,7 +21,10 @@ export const HabitCheckbox = ({ checked, handlePress, color }: HabitCheckboxProp
   return (
     <TouchableOpacity
       style={[s.checkbox, { backgroundColor: checked ? color : color + '4D' }]}
-      onPress={handlePress}
+      onPress={() => {
+        Haptics.impactAsync();
+        handlePress();
+      }}
     >
       <Ionicons name="checkmark-sharp" size={24} color={isDark ? colorForDark : colorForLight} />
     </TouchableOpacity>

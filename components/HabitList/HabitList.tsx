@@ -11,7 +11,6 @@ interface Props {
 
 export const HabitList = ({ headerComponent }: Props) => {
   const { habits } = useHabitStore();
-  console.log(habits);
   const insets = useSafeAreaInsets();
 
   return (
