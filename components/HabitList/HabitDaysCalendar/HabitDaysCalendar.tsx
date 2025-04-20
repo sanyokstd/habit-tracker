@@ -8,10 +8,9 @@ import { styles } from './styles';
 interface Props {
   activeDates: string[];
   color: string;
-  colorLight: string;
 }
 
-export const HabitDaysCalendar = ({ activeDates, color, colorLight }: Props) => {
+export const HabitDaysCalendar = ({ activeDates, color }: Props) => {
   const { t } = useTranslation();
   const { s } = useTheme(styles);
 
@@ -33,7 +32,7 @@ export const HabitDaysCalendar = ({ activeDates, color, colorLight }: Props) => 
             return (
               <View
                 key={date}
-                style={[s.calendarDay, { backgroundColor: isActive ? color : colorLight }]}
+                style={[s.calendarDay, { backgroundColor: isActive ? color : color + '4D' }]}
               />
             );
           })}

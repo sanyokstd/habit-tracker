@@ -1,17 +1,16 @@
-import { TouchableOpacity, useColorScheme } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { HabitColor, HabitColorLight } from '@/types/habits';
 import { useTheme } from '@/hooks/useTheme';
+import { HabitColor } from '@/types/habits';
+import { Ionicons } from '@expo/vector-icons';
+import { TouchableOpacity, useColorScheme } from 'react-native';
 import { styles } from './styles';
 
 interface HabitCheckboxProps {
   checked: boolean;
   handlePress: () => void;
   color: HabitColor;
-  colorLight: HabitColorLight;
 }
 
-export const HabitCheckbox = ({ checked, handlePress, color, colorLight }: HabitCheckboxProps) => {
+export const HabitCheckbox = ({ checked, handlePress, color }: HabitCheckboxProps) => {
   const { s, theme } = useTheme(styles);
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -19,7 +18,10 @@ export const HabitCheckbox = ({ checked, handlePress, color, colorLight }: Habit
   const colorForLight = checked ? '#fff' : theme.colors.onBackground;
 
   return (
-    <TouchableOpacity style={[s.checkbox, { backgroundColor: checked ? color : colorLight }]} onPress={handlePress}>
+    <TouchableOpacity
+      style={[s.checkbox, { backgroundColor: checked ? color : color + '4D' }]}
+      onPress={handlePress}
+    >
       <Ionicons name="checkmark-sharp" size={24} color={isDark ? colorForDark : colorForLight} />
     </TouchableOpacity>
   );

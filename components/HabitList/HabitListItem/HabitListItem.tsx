@@ -20,7 +20,7 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
     <View style={s.item}>
       <View style={s.topRow}>
         <View style={[s.icon, { backgroundColor: item.color + '4D' }]}>
-          <Ionicons name="alarm-outline" size={24} color={theme.colors.onBackground} />
+          <Ionicons name={item.icon} size={24} color={theme.colors.onBackground} />
         </View>
         <View style={s.infoBlock}>
           <Text numberOfLines={1} ellipsizeMode="tail" style={s.name}>
@@ -30,19 +30,10 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
             {item.description}
           </Text>
         </View>
-        <HabitCheckbox
-          checked={checked}
-          handlePress={handleCheckboxPress}
-          color={item.color}
-          colorLight={item.color + '4D'}
-        />
+        <HabitCheckbox checked={checked} handlePress={handleCheckboxPress} color={item.color} />
       </View>
 
-      <HabitDaysCalendar
-        color={item.color}
-        colorLight={item.color + '4D'}
-        activeDates={item.passedDays}
-      />
+      <HabitDaysCalendar color={item.color} activeDates={item.passedDays} />
       {item.goal ? (
         <View style={s.goal}>
           <Text style={s.goalText}>{t('HabitListItem.goal')}: </Text>

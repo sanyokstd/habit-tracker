@@ -103,7 +103,6 @@ export const NewHabit: React.FC = () => {
             <View style={s.list}>
               {Object.values(colors).map((item) => (
                 <ColorChip
-                  key={item}
                   color={item}
                   isSelected={watch('color') === item}
                   onPress={() => setValue('color', item)}

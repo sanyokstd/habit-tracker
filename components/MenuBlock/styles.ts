@@ -6,8 +6,9 @@ export const styles = (theme: MD3Theme) => ({
   },
   title: {
     color: theme.colors.onBackground,
-    fontSize: 14,
+    fontSize: 18,
     fontFamily: 'Roboto',
+    marginBottom: 4,
   },
   wrap: {
     borderWidth: 1,

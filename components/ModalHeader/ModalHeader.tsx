@@ -1,9 +1,8 @@
-import { View } from 'react-native';
-import { styles } from './styles';
 import { useTheme } from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
-import { Text } from 'react-native';
 import { Link, router } from 'expo-router';
+import { Text, View } from 'react-native';
+import { styles } from './styles';
 
 interface Props {
   title: string;
@@ -16,7 +15,7 @@ export const ModalHeader = ({ title }: Props) => {
     <View style={s.header}>
       {isPresented && (
         <Link href="../">
-          <Ionicons name="close-outline" size={30} color={theme.colors.onBackground} />
+          <Ionicons name="close-outline" size={40} color={theme.colors.onBackground} />
         </Link>
       )}
       <Text style={s.title}>{title}</Text>

@@ -1,4 +1,3 @@
-import { ImageBackground } from 'react-native';
 import { MD3Theme } from 'react-native-paper';
 
 export const styles = (theme: MD3Theme) => ({
@@ -8,8 +7,8 @@ export const styles = (theme: MD3Theme) => ({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 40,
-    height: 40,
+    width: 45,
+    height: 45,
   },
   iconSelected: {
     backgroundColor: theme.colors.primary,

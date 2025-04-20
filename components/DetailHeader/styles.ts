@@ -5,6 +5,7 @@ export const styles = (theme: MD3Theme) => ({
     flexDirection: 'row',
     gap: 20,
     padding: 15,
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
