@@ -2,7 +2,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { HabitColor } from '@/types/habits';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
-import { TouchableOpacity, useColorScheme } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 interface HabitCheckboxProps {
@@ -13,8 +13,7 @@ interface HabitCheckboxProps {
 
 export const HabitCheckbox = ({ checked, handlePress, color }: HabitCheckboxProps) => {
   const { s, theme } = useTheme(styles);
-  const colorScheme = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  const isDark = theme.dark;
   const colorForDark = checked ? theme.colors.onBackground : theme.colors.onBackground;
   const colorForLight = checked ? '#fff' : theme.colors.onBackground;
 
