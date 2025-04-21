@@ -1,5 +1,6 @@
 [x] - refactor habit list, use flatlist
 [x] - add "create habit" screen
-[] - add goals for main page
-[] - add data base for habits
+[x] - add goals for main page
+[x] - add data base for habits
+[] - add details page
 [] - add push notifications

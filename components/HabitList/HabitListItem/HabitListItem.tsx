@@ -1,6 +1,8 @@
 import { useTheme } from '@/hooks/useTheme';
+import { useHabitStore } from '@/store/habitStore';
 import { IHabit } from '@/types/habits';
 import { Ionicons } from '@expo/vector-icons';
+import { format } from 'date-fns';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, View } from 'react-native';
@@ -9,10 +11,14 @@ import { HabitDaysCalendar } from '../HabitDaysCalendar/HabitDaysCalendar';
 import { styles } from '../HabitListItem/styles';
 
 export const HabitListItem = ({ item }: { item: IHabit }) => {
+  const { checkHabitDay } = useHabitStore();
   const { t } = useTranslation();
   const { s, theme } = useTheme(styles);
-  const [checked, setChecked] = useState(false);
+  const today = format(new Date(), 'yyyy-MM-dd');
+
+  const [checked, setChecked] = useState(item.passedDays.includes(today));
   const handleCheckboxPress = () => {
+    checkHabitDay(item.id, today);
     setChecked(!checked);
   };
 
@@ -38,7 +44,7 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
         <View style={s.goal}>
           <Text style={s.goalText}>{t('HabitListItem.goal')}: </Text>
           <Text style={s.goalText}>
-            {item.goalPassed} / {item.goal}
+            {item.passedDays.length} / {item.goal}
           </Text>
         </View>
       ) : null}

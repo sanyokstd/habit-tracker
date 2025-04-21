@@ -1,4 +1,4 @@
-import { startOfWeek, endOfWeek, subWeeks, eachDayOfInterval, format, addDays } from 'date-fns';
+import { addDays, eachDayOfInterval, endOfWeek, format, subWeeks } from 'date-fns';
 
 export function getLastWeeksDates(): string[] {
   const today = new Date();

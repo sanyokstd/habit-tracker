@@ -12,7 +12,7 @@ export const styles = (theme: MD3Theme) => ({
   },
   formLabel: {
     color: theme.colors.onBackground,
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: 'Roboto',
   },
   list: {
@@ -37,7 +37,7 @@ export const styles = (theme: MD3Theme) => ({
     fontFamily: 'Roboto',
   },
   textActive: {
-    color: theme.colors.background,
+    color: '#fff',
   },
   selectAllView: {
     flexDirection: 'row',
