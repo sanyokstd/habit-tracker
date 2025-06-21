@@ -2,5 +2,3 @@
 [x] - add "create habit" screen
 [x] - add goals for main page
 [x] - add data base for habits
-[] - add details page
-[] - add push notifications

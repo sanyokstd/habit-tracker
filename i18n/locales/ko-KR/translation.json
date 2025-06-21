@@ -1,0 +1,93 @@
+{
+  "be": "Be",
+  "better": "Better",
+  "Settings": {
+    "title": "설정",
+    "general": "일반",
+    "theme": "테마",
+    "language": "언어",
+    "privacyPolicy": "개인정보 처리방침",
+    "madeWith": "☕와 ❤️로 만들어진"
+  },
+  "ThemeSettings": {
+    "title": "테마",
+    "mode": "모드",
+    "system": "시스템",
+    "light": "밝음",
+    "dark": "어둠"
+  },
+  "LanguageSettings": { "title": "언어", "changeLanguage": "언어 변경" },
+  "NewHabit": {
+    "title": "새로운 습관",
+    "name": "이름",
+    "desc": "설명",
+    "goal": "목표",
+    "reminder": "알림",
+    "icon": "아이콘",
+    "color": "색상",
+    "save": "저장",
+    "none": "없음",
+    "days": "일"
+  },
+  "EditHabit": {
+    "title": "습관 편집",
+    "save": "저장",
+    "delete": "삭제",
+    "deleteTitle": "습관 삭제",
+    "deleteMessage": "이 습관을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+    "cancel": "취소"
+  },
+  "Goal": {
+    "title": "목표",
+    "quantityDays": "일수",
+    "none": "없음",
+    "days": "일",
+    "another": "다른 목표"
+  },
+  "Reminder": {
+    "title": "알림",
+    "days": "요일",
+    "mon": "월",
+    "tue": "화",
+    "wed": "수",
+    "thu": "목",
+    "fri": "금",
+    "sat": "토",
+    "sun": "일",
+    "selectAll": "모두 선택",
+    "unselectAll": "모두 해제"
+  },
+  "HabitListItem": {
+    "goal": "목표"
+  },
+  "HabitDaysCalendar": {
+    "mon": "월",
+    "wed": "수",
+    "sun": "일"
+  },
+  "HabitCalendar": {
+    "weekDays": {
+      "mon": "월",
+      "tue": "화",
+      "wed": "수",
+      "thu": "목",
+      "fri": "금",
+      "sat": "토",
+      "sun": "일"
+    },
+    "months": {
+      "jan": "1월",
+      "feb": "2월",
+      "mar": "3월",
+      "apr": "4월",
+      "may": "5월",
+      "jun": "6월",
+      "jul": "7월",
+      "aug": "8월",
+      "sep": "9월",
+      "oct": "10월",
+      "nov": "11월",
+      "dec": "12월"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useHabitStore } from '@/store/habitStore';
 import { AddFirstHabit } from './AddFirstHabit/AddFirstHabit';
 import { HabitListItem } from './HabitListItem/HabitListItem';
+import { JSX } from 'react';
 
 interface Props {
   headerComponent: JSX.Element;

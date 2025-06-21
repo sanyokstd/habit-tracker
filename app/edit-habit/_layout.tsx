@@ -1,10 +1,15 @@
 import { habitIconNames } from '@/constants/iconNames';
 import { colors, IHabit } from '@/types/habits';
 import { format } from 'date-fns';
-import { Stack } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useHabitStore } from '@/store/habitStore';
+import { useEffect } from 'react';
 
-export default function NewHabitLayout() {
+export default function EditHabitLayout() {
+  const { getHabitById } = useHabitStore();
+  const { id } = useLocalSearchParams<{ id: string }>();
+
   const formMethods = useForm<IHabit>({
     defaultValues: {
       name: '',
@@ -18,6 +23,17 @@ export default function NewHabitLayout() {
     },
     mode: 'onBlur',
   });
+
+  // Заповнюємо форму даними існуючої звички, якщо передано id
+  useEffect(() => {
+    if (id) {
+      const habitId = parseInt(id);
+      const existingHabit = getHabitById(habitId);
+      if (existingHabit) {
+        formMethods.reset(existingHabit);
+      }
+    }
+  }, [id, getHabitById, formMethods]);
 
   return (
     <FormProvider {...formMethods}>

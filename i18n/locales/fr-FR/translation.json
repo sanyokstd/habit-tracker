@@ -1,0 +1,93 @@
+{
+  "be": "Be",
+  "better": "Better",
+  "Settings": {
+    "title": "Paramètres",
+    "general": "Général",
+    "theme": "Thème",
+    "language": "Langue",
+    "privacyPolicy": "Politique de confidentialité",
+    "madeWith": "Créé avec ☕ et ❤️ par"
+  },
+  "ThemeSettings": {
+    "title": "Thème",
+    "mode": "Mode",
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "LanguageSettings": { "title": "Langue", "changeLanguage": "Changer de langue" },
+  "NewHabit": {
+    "title": "Nouvelle habitude",
+    "name": "Nom",
+    "desc": "Description",
+    "goal": "Objectif",
+    "reminder": "Rappel",
+    "icon": "Icône",
+    "color": "Couleur",
+    "save": "ENREGISTRER",
+    "none": "aucun",
+    "days": "jours"
+  },
+  "EditHabit": {
+    "title": "Modifier l'habitude",
+    "save": "ENREGISTRER",
+    "delete": "SUPPRIMER",
+    "deleteTitle": "Supprimer l'habitude",
+    "deleteMessage": "Êtes-vous sûr de vouloir supprimer cette habitude ? Cette action ne peut pas être annulée.",
+    "cancel": "Annuler"
+  },
+  "Goal": {
+    "title": "Objectif",
+    "quantityDays": "Nombre de jours",
+    "none": "aucun",
+    "days": "jours",
+    "another": "autre objectif"
+  },
+  "Reminder": {
+    "title": "Rappel",
+    "days": "Jours",
+    "mon": "lun",
+    "tue": "mar",
+    "wed": "mer",
+    "thu": "jeu",
+    "fri": "ven",
+    "sat": "sam",
+    "sun": "dim",
+    "selectAll": "Tout sélectionner",
+    "unselectAll": "Tout désélectionner"
+  },
+  "HabitListItem": {
+    "goal": "Objectif"
+  },
+  "HabitDaysCalendar": {
+    "mon": "Lun",
+    "wed": "Mer",
+    "sun": "Dim"
+  },
+  "HabitCalendar": {
+    "weekDays": {
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mer",
+      "thu": "Jeu",
+      "fri": "Ven",
+      "sat": "Sam",
+      "sun": "Dim"
+    },
+    "months": {
+      "jan": "Jan",
+      "feb": "Fév",
+      "mar": "Mar",
+      "apr": "Avr",
+      "may": "Mai",
+      "jun": "Juin",
+      "jul": "Juil",
+      "aug": "Août",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Déc"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "be": "Be",
+  "better": "Better",
+  "Settings": {
+    "title": "設定",
+    "general": "一般",
+    "theme": "テーマ",
+    "language": "言語",
+    "privacyPolicy": "プライバシーポリシー",
+    "madeWith": "☕と❤️で作成"
+  },
+  "ThemeSettings": {
+    "title": "テーマ",
+    "mode": "モード",
+    "system": "システム",
+    "light": "ライト",
+    "dark": "ダーク"
+  },
+  "LanguageSettings": { "title": "言語", "changeLanguage": "言語を変更" },
+  "NewHabit": {
+    "title": "新しい習慣",
+    "name": "名前",
+    "desc": "説明",
+    "goal": "目標",
+    "reminder": "リマインダー",
+    "icon": "アイコン",
+    "color": "色",
+    "save": "保存",
+    "none": "なし",
+    "days": "日"
+  },
+  "EditHabit": {
+    "title": "習慣を編集",
+    "save": "保存",
+    "delete": "削除",
+    "deleteTitle": "習慣を削除",
+    "deleteMessage": "この習慣を削除してもよろしいですか？この操作は元に戻せません。",
+    "cancel": "キャンセル"
+  },
+  "Goal": {
+    "title": "目標",
+    "quantityDays": "日数",
+    "none": "なし",
+    "days": "日",
+    "another": "別の目標"
+  },
+  "Reminder": {
+    "title": "リマインダー",
+    "days": "曜日",
+    "mon": "月",
+    "tue": "火",
+    "wed": "水",
+    "thu": "木",
+    "fri": "金",
+    "sat": "土",
+    "sun": "日",
+    "selectAll": "すべて選択",
+    "unselectAll": "すべて解除"
+  },
+  "HabitListItem": {
+    "goal": "目標"
+  },
+  "HabitDaysCalendar": {
+    "mon": "月",
+    "wed": "水",
+    "sun": "日"
+  },
+  "HabitCalendar": {
+    "weekDays": {
+      "mon": "月",
+      "tue": "火",
+      "wed": "水",
+      "thu": "木",
+      "fri": "金",
+      "sat": "土",
+      "sun": "日"
+    },
+    "months": {
+      "jan": "1月",
+      "feb": "2月",
+      "mar": "3月",
+      "apr": "4月",
+      "may": "5月",
+      "jun": "6月",
+      "jul": "7月",
+      "aug": "8月",
+      "sep": "9月",
+      "oct": "10月",
+      "nov": "11月",
+      "dec": "12月"
+    }
+  }
+}

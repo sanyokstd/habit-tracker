@@ -1,0 +1,93 @@
+{
+  "be": "Be",
+  "better": "Better",
+  "Settings": {
+    "title": "Ustawienia",
+    "general": "Ogólne",
+    "theme": "Motyw",
+    "language": "Język",
+    "privacyPolicy": "Polityka prywatności",
+    "madeWith": "Stworzone z ☕ i ❤️ przez"
+  },
+  "ThemeSettings": {
+    "title": "Motyw",
+    "mode": "Tryb",
+    "system": "System",
+    "light": "Jasny",
+    "dark": "Ciemny"
+  },
+  "LanguageSettings": { "title": "Język", "changeLanguage": "Zmień język" },
+  "NewHabit": {
+    "title": "Nowy nawyk",
+    "name": "Nazwa",
+    "desc": "Opis",
+    "goal": "Cel",
+    "reminder": "Przypomnienie",
+    "icon": "Ikona",
+    "color": "Kolor",
+    "save": "ZAPISZ",
+    "none": "brak",
+    "days": "dni"
+  },
+  "EditHabit": {
+    "title": "Edytuj nawyk",
+    "save": "ZAPISZ",
+    "delete": "USUŃ",
+    "deleteTitle": "Usuń nawyk",
+    "deleteMessage": "Czy na pewno chcesz usunąć ten nawyk? Tej akcji nie można cofnąć.",
+    "cancel": "Anuluj"
+  },
+  "Goal": {
+    "title": "Cel",
+    "quantityDays": "Liczba dni",
+    "none": "brak",
+    "days": "dni",
+    "another": "inny cel"
+  },
+  "Reminder": {
+    "title": "Przypomnienie",
+    "days": "Dni",
+    "mon": "pon",
+    "tue": "wto",
+    "wed": "śro",
+    "thu": "czw",
+    "fri": "ptk",
+    "sat": "sob",
+    "sun": "nie",
+    "selectAll": "Zaznacz wszystkie",
+    "unselectAll": "Odznacz wszystkie"
+  },
+  "HabitListItem": {
+    "goal": "Cel"
+  },
+  "HabitDaysCalendar": {
+    "mon": "Pon",
+    "wed": "Śro",
+    "sun": "Nie"
+  },
+  "HabitCalendar": {
+    "weekDays": {
+      "mon": "Pon",
+      "tue": "Wto",
+      "wed": "Śro",
+      "thu": "Czw",
+      "fri": "Ptk",
+      "sat": "Sob",
+      "sun": "Nie"
+    },
+    "months": {
+      "jan": "Sty",
+      "feb": "Lut",
+      "mar": "Mar",
+      "apr": "Kwi",
+      "may": "Maj",
+      "jun": "Cze",
+      "jul": "Lip",
+      "aug": "Sie",
+      "sep": "Wrz",
+      "oct": "Paź",
+      "nov": "Lis",
+      "dec": "Gru"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { addDays, eachDayOfInterval, endOfWeek, format, subWeeks } from 'date-fns';
 
-export function getLastWeeksDates(): string[] {
-  const today = new Date();
+export function getWeeksDates(createdAt: string): string[] {
+  const today = new Date(createdAt);
 
   // Знаходимо кінець поточного тижня (неділя)
   const endOfCurrentWeek = endOfWeek(today, { weekStartsOn: 1 }); // Тиждень починається з понеділка (1)

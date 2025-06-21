@@ -6,7 +6,6 @@ export const styles = (theme: MD3Theme) => ({
     backgroundColor: theme.colors.background,
   },
   content: {
-    flex: 1,
     padding: 15,
     gap: 20,
   },

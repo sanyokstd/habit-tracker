@@ -3,27 +3,42 @@ import { useHabitStore } from '@/store/habitStore';
 import { IHabit } from '@/types/habits';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
+import { HabitCalendar } from '@/components';
 import { HabitCheckbox } from '../HabitCheckbox/HabitCheckbox';
-import { HabitDaysCalendar } from '../HabitDaysCalendar/HabitDaysCalendar';
 import { styles } from '../HabitListItem/styles';
+import { useRouter } from 'expo-router';
 
 export const HabitListItem = ({ item }: { item: IHabit }) => {
   const { checkHabitDay } = useHabitStore();
   const { t } = useTranslation();
   const { s, theme } = useTheme(styles);
+  const router = useRouter();
   const today = format(new Date(), 'yyyy-MM-dd');
 
   const [checked, setChecked] = useState(item.passedDays.includes(today));
+
+  useEffect(() => {
+    setChecked(item.passedDays.includes(today));
+  }, [item.passedDays, today]);
+
   const handleCheckboxPress = () => {
     checkHabitDay(item.id, today);
     setChecked(!checked);
   };
 
+  const handleDayPress = (habitId: number, date: string) => {
+    checkHabitDay(habitId, date);
+  };
+
+  const handleLongPress = () => {
+    router.push(`/edit-habit?id=${item.id}`);
+  };
+
   return (
-    <View style={s.item}>
+    <TouchableOpacity style={s.item} onPress={handleLongPress} activeOpacity={0.7}>
       <View style={s.topRow}>
         <View style={[s.icon, { backgroundColor: item.color + '4D' }]}>
           <Ionicons name={item.icon} size={24} color={theme.colors.onBackground} />
@@ -39,7 +54,8 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
         <HabitCheckbox checked={checked} handlePress={handleCheckboxPress} color={item.color} />
       </View>
 
-      <HabitDaysCalendar color={item.color} activeDates={item.passedDays} />
+      <HabitCalendar habit={item} onDayPress={handleDayPress} />
+
       {item.goal ? (
         <View style={s.goal}>
           <Text style={s.goalText}>{t('HabitListItem.goal')}: </Text>
@@ -48,6 +64,6 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
           </Text>
         </View>
       ) : null}
-    </View>
+    </TouchableOpacity>
   );
 };

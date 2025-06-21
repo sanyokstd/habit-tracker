@@ -47,6 +47,7 @@ function AppContent() {
         <Stack.Screen name="index" />
         <Stack.Screen name="settings" options={{ animation: 'slide_from_bottom' }} />
         <Stack.Screen name="new-habit" options={{ animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="edit-habit" options={{ animation: 'slide_from_bottom' }} />
       </Stack>
       <StatusBar style={theme.dark ? 'light' : 'dark'} />
     </PaperProvider>

@@ -33,21 +33,6 @@ export const styles = (theme: MD3Theme) => ({
     fontSize: 15,
     color: theme.colors.onBackground,
   },
-  calendar: {
-    flexDirection: 'row-reverse',
-    gap: 4,
-    overflowX: 'scroll',
-    paddingBottom: 10,
-  },
-  calendarColumn: {
-    flexDirection: 'column',
-    gap: 4,
-  },
-  calendarDay: {
-    width: 10,
-    height: 10,
-    borderRadius: 2,
-  },
   goal: {
     flexDirection: 'row',
     gap: 4,

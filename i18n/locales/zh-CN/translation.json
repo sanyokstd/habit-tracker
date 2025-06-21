@@ -1,0 +1,93 @@
+{
+  "be": "Be",
+  "better": "Better",
+  "Settings": {
+    "title": "设置",
+    "general": "通用",
+    "theme": "主题",
+    "language": "语言",
+    "privacyPolicy": "隐私政策",
+    "madeWith": "用 ☕ 和 ❤️ 制作"
+  },
+  "ThemeSettings": {
+    "title": "主题",
+    "mode": "模式",
+    "system": "系统",
+    "light": "浅色",
+    "dark": "深色"
+  },
+  "LanguageSettings": { "title": "语言", "changeLanguage": "更改语言" },
+  "NewHabit": {
+    "title": "新习惯",
+    "name": "名称",
+    "desc": "描述",
+    "goal": "目标",
+    "reminder": "提醒",
+    "icon": "图标",
+    "color": "颜色",
+    "save": "保存",
+    "none": "无",
+    "days": "天"
+  },
+  "EditHabit": {
+    "title": "编辑习惯",
+    "save": "保存",
+    "delete": "删除",
+    "deleteTitle": "删除习惯",
+    "deleteMessage": "确定要删除这个习惯吗？此操作无法撤销。",
+    "cancel": "取消"
+  },
+  "Goal": {
+    "title": "目标",
+    "quantityDays": "天数",
+    "none": "无",
+    "days": "天",
+    "another": "其他目标"
+  },
+  "Reminder": {
+    "title": "提醒",
+    "days": "星期",
+    "mon": "周一",
+    "tue": "周二",
+    "wed": "周三",
+    "thu": "周四",
+    "fri": "周五",
+    "sat": "周六",
+    "sun": "周日",
+    "selectAll": "全选",
+    "unselectAll": "取消全选"
+  },
+  "HabitListItem": {
+    "goal": "目标"
+  },
+  "HabitDaysCalendar": {
+    "mon": "周一",
+    "wed": "周三",
+    "sun": "周日"
+  },
+  "HabitCalendar": {
+    "weekDays": {
+      "mon": "周一",
+      "tue": "周二",
+      "wed": "周三",
+      "thu": "周四",
+      "fri": "周五",
+      "sat": "周六",
+      "sun": "周日"
+    },
+    "months": {
+      "jan": "1月",
+      "feb": "2月",
+      "mar": "3月",
+      "apr": "4月",
+      "may": "5月",
+      "jun": "6月",
+      "jul": "7月",
+      "aug": "8月",
+      "sep": "9月",
+      "oct": "10月",
+      "nov": "11月",
+      "dec": "12月"
+    }
+  }
+}

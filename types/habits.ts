@@ -32,4 +32,5 @@ export interface IHabit {
   passedDays: string[];
   reminder: ReminderValue[];
   goal?: number;
+  createdAt: string;
 }
