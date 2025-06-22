@@ -9,13 +9,10 @@ import { useEffect } from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
+// Запобігаємо автоматичному приховуванню splash скріна
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  useEffect(() => {
-    SplashScreen.hideAsync();
-  }, []);
-
   const [loaded] = useFonts({
     Roboto: require('../assets/fonts/Roboto-Regular.ttf'),
     RobotoBold: require('../assets/fonts/Roboto-Bold.ttf'),
@@ -23,6 +20,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
+      // Приховуємо splash скрін тільки після завантаження шрифтів
       SplashScreen.hideAsync();
     }
   }, [loaded]);
