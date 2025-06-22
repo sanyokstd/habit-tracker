@@ -89,5 +89,9 @@
       "nov": "Lis",
       "dec": "Gru"
     }
+  },
+  "AddFirstHabit": {
+    "emptyList": "Lista nawyków jest pusta",
+    "createHabit": "Utwórz nawyk"
   }
 }

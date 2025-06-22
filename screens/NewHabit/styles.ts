@@ -3,16 +3,12 @@ import { MD3Theme } from 'react-native-paper';
 export const styles = (theme: MD3Theme) => ({
   keyboard: {
     flex: 1,
+    position: 'relative',
   },
   area: {
     flex: 1,
     backgroundColor: theme.colors.background,
     position: 'relative',
-  },
-  content: {
-    padding: 15,
-    gap: 20,
-    paddingBottom: 150,
   },
   saveButtonWrapper: {
     position: 'absolute',
@@ -30,18 +26,5 @@ export const styles = (theme: MD3Theme) => ({
   },
   flexItem: {
     flex: 1,
-  },
-  formBlock: {
-    gap: 4,
-  },
-  formLabel: {
-    color: theme.colors.onBackground,
-    fontSize: 14,
-    fontFamily: 'Roboto',
-  },
-  list: {
-    flexDirection: 'row',
-    gap: 10,
-    flexWrap: 'wrap',
   },
 });

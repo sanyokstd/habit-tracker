@@ -9,11 +9,6 @@ export const styles = (theme: MD3Theme) => ({
     backgroundColor: theme.colors.background,
     position: 'relative',
   },
-  content: {
-    padding: 15,
-    gap: 20,
-    paddingBottom: 150,
-  },
   buttonContainer: {
     position: 'absolute',
     left: 15,
@@ -50,18 +45,5 @@ export const styles = (theme: MD3Theme) => ({
   },
   flexItem: {
     flex: 1,
-  },
-  formBlock: {
-    gap: 4,
-  },
-  formLabel: {
-    color: theme.colors.onBackground,
-    fontSize: 14,
-    fontFamily: 'Roboto',
-  },
-  list: {
-    flexDirection: 'row',
-    gap: 10,
-    flexWrap: 'wrap',
   },
 });

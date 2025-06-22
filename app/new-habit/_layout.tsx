@@ -22,9 +22,9 @@ export default function NewHabitLayout() {
   return (
     <FormProvider {...formMethods}>
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="reminder" />
-        <Stack.Screen name="goal" />
+        <Stack.Screen name="index" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="reminder" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="goal" options={{ animation: 'slide_from_right' }} />
       </Stack>
     </FormProvider>
   );

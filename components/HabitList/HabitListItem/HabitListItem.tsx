@@ -5,9 +5,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, View, TouchableOpacity } from 'react-native';
-import { HabitCalendar } from '@/components';
+import { Text, View } from 'react-native';
+import { HabitCalendar } from '../../HabitCalendar/HabitCalendar';
 import { HabitCheckbox } from '../HabitCheckbox/HabitCheckbox';
+import { SafeTouchableOpacity } from '../../SafeTouchableOpacity/SafeTouchableOpacity';
 import { styles } from '../HabitListItem/styles';
 import { useRouter } from 'expo-router';
 
@@ -33,12 +34,12 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
     checkHabitDay(habitId, date);
   };
 
-  const handleLongPress = () => {
+  const handleEdit = () => {
     router.push(`/edit-habit?id=${item.id}`);
   };
 
   return (
-    <TouchableOpacity style={s.item} onPress={handleLongPress} activeOpacity={0.7}>
+    <View style={s.item}>
       <View style={s.topRow}>
         <View style={[s.icon, { backgroundColor: item.color + '4D' }]}>
           <Ionicons name={item.icon} size={24} color={theme.colors.onBackground} />
@@ -51,6 +52,9 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
             {item.description}
           </Text>
         </View>
+        <SafeTouchableOpacity onPress={handleEdit} style={s.editButton}>
+          <Ionicons name="settings-outline" size={24} color={theme.colors.onBackground} />
+        </SafeTouchableOpacity>
         <HabitCheckbox checked={checked} handlePress={handleCheckboxPress} color={item.color} />
       </View>
 
@@ -64,6 +68,6 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
           </Text>
         </View>
       ) : null}
-    </TouchableOpacity>
+    </View>
   );
 };

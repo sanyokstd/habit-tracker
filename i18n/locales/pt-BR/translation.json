@@ -89,5 +89,9 @@
       "nov": "Nov",
       "dec": "Dez"
     }
+  },
+  "AddFirstHabit": {
+    "emptyList": "Lista de hábitos vazia",
+    "createHabit": "Criar hábito"
   }
 }

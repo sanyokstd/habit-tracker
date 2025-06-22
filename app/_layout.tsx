@@ -7,6 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -40,16 +41,39 @@ export default function RootLayout() {
 function AppContent() {
   const { theme } = useThemeContext();
   const paperTheme = getActiveTheme(theme);
+  const backgroundColor = theme.dark ? '#1a1c19' : '#fcfdf7';
 
   return (
-    <PaperProvider theme={paperTheme}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="settings" options={{ animation: 'slide_from_bottom' }} />
-        <Stack.Screen name="new-habit" options={{ animation: 'slide_from_bottom' }} />
-        <Stack.Screen name="edit-habit" options={{ animation: 'slide_from_bottom' }} />
-      </Stack>
-      <StatusBar style={theme.dark ? 'light' : 'dark'} />
-    </PaperProvider>
+    <View style={[styles.container, { backgroundColor }]}>
+      <PaperProvider theme={paperTheme}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor },
+          }}
+        >
+          <Stack.Screen name="index" />
+          <Stack.Screen
+            name="settings"
+            options={{ animation: 'slide_from_left', animationDuration: 200 }}
+          />
+          <Stack.Screen
+            name="new-habit"
+            options={{ animation: 'slide_from_right', animationDuration: 200 }}
+          />
+          <Stack.Screen
+            name="edit-habit"
+            options={{ animation: 'slide_from_right', animationDuration: 200 }}
+          />
+        </Stack>
+        <StatusBar style={theme.dark ? 'light' : 'dark'} />
+      </PaperProvider>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

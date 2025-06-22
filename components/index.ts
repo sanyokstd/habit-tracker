@@ -9,3 +9,5 @@ export { LinkToForm } from './LinkToForm/LinkToForm';
 export { IconChip } from './IconChip/IconChip';
 export { ColorChip } from './ColorChip/ColorChip';
 export { HabitCalendar } from './HabitCalendar/HabitCalendar';
+export { HabitForm } from './HabitForm/HabitForm';
+export { SafeTouchableOpacity } from './SafeTouchableOpacity/SafeTouchableOpacity';

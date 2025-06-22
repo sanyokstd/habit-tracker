@@ -42,4 +42,11 @@ export const styles = (theme: MD3Theme) => ({
     fontSize: 15,
     color: theme.colors.onBackground,
   },
+  editButton: {
+    width: 40,
+    height: 40,
+    marginRight: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

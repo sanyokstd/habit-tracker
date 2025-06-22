@@ -89,5 +89,9 @@
       "nov": "11月",
       "dec": "12月"
     }
+  },
+  "AddFirstHabit": {
+    "emptyList": "習慣リストが空です",
+    "createHabit": "習慣を作成"
   }
 }

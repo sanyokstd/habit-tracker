@@ -123,7 +123,7 @@ export const WeekSlider = ({ habit, onDayPress }: Props) => {
                   {format(date, 'd')}
                 </Text>
               </TouchableOpacity>
-              <View style={[s.dot, { backgroundColor: isActive ? habit.color : 'transparent' }]} />
+              <View style={[s.dot, { backgroundColor: habit.color, opacity: isActive ? 1 : 0 }]} />
             </View>
           );
         })}

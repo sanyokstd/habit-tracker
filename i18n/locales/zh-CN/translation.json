@@ -89,5 +89,9 @@
       "nov": "11月",
       "dec": "12月"
     }
+  },
+  "AddFirstHabit": {
+    "emptyList": "习惯列表为空",
+    "createHabit": "创建习惯"
   }
 }

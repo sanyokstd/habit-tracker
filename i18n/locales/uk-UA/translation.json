@@ -89,5 +89,9 @@
       "nov": "Лис",
       "dec": "Гру"
     }
+  },
+  "AddFirstHabit": {
+    "emptyList": "Список звичок порожній",
+    "createHabit": "Створити звичку"
   }
 }

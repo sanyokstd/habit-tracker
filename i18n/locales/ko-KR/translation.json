@@ -89,5 +89,9 @@
       "nov": "11월",
       "dec": "12월"
     }
+  },
+  "AddFirstHabit": {
+    "emptyList": "습관 목록이 비어있습니다",
+    "createHabit": "습관 만들기"
   }
 }

@@ -5,6 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
+import { SafeTouchableOpacity } from '../SafeTouchableOpacity/SafeTouchableOpacity';
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -12,9 +13,9 @@ export const Header = () => {
 
   return (
     <View style={s.header}>
-      <TouchableOpacity onPress={() => router.push('/settings')}>
+      <SafeTouchableOpacity onPress={() => router.push('/settings')}>
         <Ionicons name="settings-outline" size={40} color={theme.colors.onBackground} />
-      </TouchableOpacity>
+      </SafeTouchableOpacity>
 
       <View style={s.logo}>
         <Text style={s.text}>{t('be')}</Text>
@@ -22,9 +23,9 @@ export const Header = () => {
       </View>
 
       <View style={s.right}>
-        <TouchableOpacity onPress={() => router.push('/new-habit')}>
+        <SafeTouchableOpacity onPress={() => router.push('/new-habit')}>
           <Ionicons name="add-circle-outline" size={40} color={theme.colors.onBackground} />
-        </TouchableOpacity>
+        </SafeTouchableOpacity>
       </View>
     </View>
   );
