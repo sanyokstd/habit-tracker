@@ -26,9 +26,6 @@ export const styles = (theme: MD3Theme) => ({
   deleteButton: {
     borderColor: theme.colors.error,
   },
-  saveButton: {
-    // Стилі для кнопки збереження
-  },
   saveButtonWrapper: {
     position: 'absolute',
     left: 15,

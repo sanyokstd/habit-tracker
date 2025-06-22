@@ -66,7 +66,7 @@ export const EditHabit: React.FC = () => {
           {t('EditHabit.delete')}
         </Button>
         <Button
-          style={[s.saveButton, s.button]}
+          style={s.button}
           contentStyle={s.buttonContent}
           mode="contained"
           onPress={handleSubmit((data) => onSubmit(data))}

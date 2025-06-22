@@ -3,7 +3,7 @@ import { MD3Theme } from 'react-native-paper';
 export const styles = (theme: MD3Theme) => ({
   content: {
     padding: 20,
-    paddingBottom: 100,
+    paddingBottom: 150,
   },
   formBlock: {
     marginBottom: 20,

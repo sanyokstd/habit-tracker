@@ -1,11 +1,11 @@
 import { useTheme } from '@/hooks/useTheme';
 import { styles } from './styles';
 import { TouchableOpacity, View } from 'react-native';
-import { HabitColorLight, HabitColor } from '@/types/habits';
+import { HabitColor } from '@/types/habits';
 
 interface Props {
   onPress: () => void;
-  color: HabitColor | HabitColorLight;
+  color: HabitColor;
   isSelected: boolean;
 }
 

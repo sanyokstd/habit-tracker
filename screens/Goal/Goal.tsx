@@ -5,9 +5,10 @@ import React, { useRef, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { TextInput as RNTextInput, View } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './styles';
+import { Link } from 'expo-router';
 
 export function Goal() {
   const { s, theme } = useTheme(styles);
@@ -100,6 +101,12 @@ export function Goal() {
             </>
           )}
         </MenuBlock>
+        <Link href="../" style={{ width: '100%' }}>
+          <Button mode="contained" textColor="#fff" style={{ width: '100%' }}>
+            {' '}
+            {t('EditHabit.save')}
+          </Button>
+        </Link>
       </View>
     </SafeAreaView>
   );

@@ -5,6 +5,8 @@ export const colors = {
   green: '#388e3c',
   red: '#d32f2f',
   blue: '#1976d2',
+  purple: '#7b1fa2',
+  orange: '#f57c00',
 } as const;
 
 export type ColorKeys = keyof typeof colors;
