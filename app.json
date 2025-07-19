@@ -13,6 +13,10 @@
       "icon": {
         "light": "./assets/images/ios-light.png",
         "dark": "./assets/images/ios-dark.png"
+      },
+      "bundleIdentifier": "com.sanyokstd.bebetter",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -41,7 +45,10 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/Roboto-Regular.ttf", "./assets/fonts/Roboto-Bold.ttf"]
+          "fonts": [
+            "./assets/fonts/Roboto-Regular.ttf",
+            "./assets/fonts/Roboto-Bold.ttf"
+          ]
         }
       ],
       "expo-localization"
