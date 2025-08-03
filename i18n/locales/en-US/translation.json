@@ -88,7 +88,9 @@
       "oct": "Oct",
       "nov": "Nov",
       "dec": "Dec"
-    }
+    },
+    "weekView": "Week",
+    "monthView": "Month"
   },
   "AddFirstHabit": {
     "emptyList": "List of habits empty",

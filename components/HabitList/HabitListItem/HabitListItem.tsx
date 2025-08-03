@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { HabitCalendar } from '../../HabitCalendar/HabitCalendar';
 import { HabitCheckbox } from '../HabitCheckbox/HabitCheckbox';
 import { SafeTouchableOpacity } from '../../SafeTouchableOpacity/SafeTouchableOpacity';
@@ -13,6 +13,10 @@ import { styles } from '../HabitListItem/styles';
 import { useRouter } from 'expo-router';
 
 export const HabitListItem = ({ item }: { item: IHabit }) => {
+  const [isMonthView, setIsMonthView] = useState(false);
+  const toggleView = () => {
+    setIsMonthView(!isMonthView);
+  };
   const { checkHabitDay } = useHabitStore();
   const { t } = useTranslation();
   const { s, theme } = useTheme(styles);
@@ -58,16 +62,31 @@ export const HabitListItem = ({ item }: { item: IHabit }) => {
         <HabitCheckbox checked={checked} handlePress={handleCheckboxPress} color={item.color} />
       </View>
 
-      <HabitCalendar habit={item} onDayPress={handleDayPress} />
-
-      {item.goal ? (
-        <View style={s.goal}>
-          <Text style={s.goalText}>{t('HabitListItem.goal')}: </Text>
-          <Text style={s.goalText}>
-            {item.passedDays.length} / {item.goal}
-          </Text>
+      <HabitCalendar habit={item} onDayPress={handleDayPress} isMonthView={isMonthView} />
+      <View style={s.bottomRow}>
+        <View style={s.modeToggle}>
+          <TouchableOpacity onPress={toggleView} style={s.toggleButton}>
+            <Ionicons
+              name={isMonthView ? 'calendar' : 'calendar-outline'}
+              size={16}
+              color={theme.colors.onBackground}
+            />
+            <Text style={[s.toggleButtonText, { color: theme.colors.onBackground }]}>
+              {isMonthView ? t('HabitCalendar.weekView') : t('HabitCalendar.monthView')}
+            </Text>
+          </TouchableOpacity>
         </View>
-      ) : null}
+        <View>
+          {item.goal ? (
+            <View style={s.goal}>
+              <Text style={s.goalText}>{t('HabitListItem.goal')}: </Text>
+              <Text style={s.goalText}>
+                {item.passedDays.length} / {item.goal}
+              </Text>
+            </View>
+          ) : null}
+        </View>
+      </View>
     </View>
   );
 };

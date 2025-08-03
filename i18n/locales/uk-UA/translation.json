@@ -88,7 +88,9 @@
       "oct": "Жов",
       "nov": "Лис",
       "dec": "Гру"
-    }
+    },
+    "weekView": "Тиждень",
+    "monthView": "Місяць"
   },
   "AddFirstHabit": {
     "emptyList": "Список звичок порожній",

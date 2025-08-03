@@ -1,6 +1,6 @@
 import { useTheme } from '@/hooks/useTheme';
 import { IHabit } from '@/types/habits';
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { format, addWeeks, subWeeks, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,12 +10,13 @@ import { styles } from './styles';
 interface Props {
   habit: IHabit;
   onDayPress: (habitId: number, date: string) => void;
+  currentDate: Date;
+  setCurrentDate: Dispatch<SetStateAction<Date>>;
 }
 
-export const WeekSlider = ({ habit, onDayPress }: Props) => {
+export const WeekSlider = ({ habit, onDayPress, currentDate, setCurrentDate }: Props) => {
   const { s, theme } = useTheme(styles);
   const { t } = useTranslation();
-  const [currentDate, setCurrentDate] = useState(new Date());
 
   // Отримуємо дати поточного тижня
   const weekStart = startOfWeek(currentDate, { weekStartsOn: 1 }); // Понеділок

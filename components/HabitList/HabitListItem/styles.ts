@@ -49,4 +49,28 @@ export const styles = (theme: MD3Theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  // Стилі для переключення режимів
+  modeToggle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  toggleButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: theme.colors.surfaceVariant,
+  },
+  toggleButtonText: {
+    fontSize: 12,
+    fontWeight: '500',
+    marginLeft: 5,
+  },
+  bottomRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
 });

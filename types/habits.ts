@@ -7,6 +7,12 @@ export const colors = {
   blue: '#1976d2',
   purple: '#7b1fa2',
   orange: '#f57c00',
+  pink: '#e91e63',
+  brown: '#795548',
+  teal: '#009688',
+  cyan: '#00bcd4',
+  lime: '#cddc39',
+  indigo: '#3f51b5',
 } as const;
 
 export type ColorKeys = keyof typeof colors;

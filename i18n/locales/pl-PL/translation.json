@@ -88,7 +88,9 @@
       "oct": "Paź",
       "nov": "Lis",
       "dec": "Gru"
-    }
+    },
+    "weekView": "Tydzień",
+    "monthView": "Miesiąc"
   },
   "AddFirstHabit": {
     "emptyList": "Lista nawyków jest pusta",

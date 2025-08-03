@@ -88,7 +88,9 @@
       "oct": "Oct",
       "nov": "Nov",
       "dec": "Déc"
-    }
+    },
+    "weekView": "Semaine",
+    "monthView": "Mois"
   },
   "AddFirstHabit": {
     "emptyList": "Liste des habitudes vide",

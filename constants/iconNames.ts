@@ -39,6 +39,10 @@ export const habitIconNames: IoniconName[] = [
   // Фінанси та бізнес
   'wallet-outline',
   'calculator-outline',
+  'card-outline',
+  'trending-up-outline',
+  'storefront-outline',
+  'cash-outline',
 
   // Розваги та хобі
   'game-controller-outline',
