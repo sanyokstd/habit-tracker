@@ -88,7 +88,9 @@
       "oct": "10月",
       "nov": "11月",
       "dec": "12月"
-    }
+    },
+    "weekView": "周视图",
+    "monthView": "月视图"
   },
   "AddFirstHabit": {
     "emptyList": "习惯列表为空",

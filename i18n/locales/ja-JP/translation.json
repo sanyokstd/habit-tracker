@@ -88,7 +88,9 @@
       "oct": "10月",
       "nov": "11月",
       "dec": "12月"
-    }
+    },
+    "weekView": "週",
+    "monthView": "月"
   },
   "AddFirstHabit": {
     "emptyList": "習慣リストが空です",

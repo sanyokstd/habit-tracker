@@ -88,7 +88,9 @@
       "oct": "10월",
       "nov": "11월",
       "dec": "12월"
-    }
+    },
+    "weekView": "주간",
+    "monthView": "월간"
   },
   "AddFirstHabit": {
     "emptyList": "습관 목록이 비어있습니다",
